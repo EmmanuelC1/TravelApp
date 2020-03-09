@@ -1,8 +1,7 @@
-# TravelApp
 Group Project - README Template
 ===
 
-# APP_NAME_HERE
+# Travel App
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -12,7 +11,7 @@ Group Project - README Template
 
 ## Overview
 ### Description
-[Description of your app]
+[Create an app for tourists who want to know about local food, movies, and physical events in relation to their current location.]
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
