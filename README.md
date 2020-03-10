@@ -29,7 +29,13 @@ Group Project - README Template
 **Required Must-have Stories**
 
 * [fill in your required user stories here]
-* ...
+* User login
+* Save user data(favorites)
+* Find user's current location
+* Home Screen with 4 tab buttons
+* Query DB for images to populate tabs
+* User must be able to select an item and see details (book button)
+* Give user ability to book event (mock-up)
 
 **Optional Nice-to-have Stories**
 
