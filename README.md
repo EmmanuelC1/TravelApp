@@ -39,21 +39,20 @@ Group Project - README Template
 
 **Optional Nice-to-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* [Add pins to display favorites or searched items]
+
 
 ### 2. Screen Archetypes
 
 * [Login page]
    * [User enters login valid information]
-   * ...
 * [Home page]
    * [Displays categories:"Movies","Food"]
    * [Tabs in tabbar: "Home","Search",Favorites"]
 * [Category-specific-page ie:"Food"]
   * [Display table with corresponding places ie:"McDonalds"]
 * [Place details page corresponding to cell from category table]
-  * [Display information about the place/event]
+  * [Display information about the place/event, booking button]
 * [Search tab -> Maps page]
   * [Search for specific place/activity -> give details and allow to reserve/book event]
 
@@ -73,16 +72,17 @@ Group Project - README Template
    * [Home tab]
    * [Map Search tab]
    * [Favorite tab]
-* [Map Search tab]
-   * [Map and search for places]
 * [Home page w/ categories]
    * [List matching corresponding category]
    * [Click cell to view More Details page]
 * [Category details page]
    * [Allows for booking/reserving the place/activity]
+* [Map Search tab]
+   * [Map and search for places]
+
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="https://imgur.com/eyTqj2Z" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
