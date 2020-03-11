@@ -31,7 +31,7 @@ Group Project - README Template
 * [fill in your required user stories here]
 * User login
 * Save user data(favorites)
-* Find user's current location
+* Find user's current location using appropriate privacy settings
 * Home Screen with 4 tab buttons
 * Query DB for images to populate tabs
 * User must be able to select an item and see details (book button)
@@ -44,30 +44,42 @@ Group Project - README Template
 
 ### 2. Screen Archetypes
 
-* [list first screen here]
-   * [list associated required story here]
+* [Login page]
+   * [User enters login valid information]
    * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* [Home page]
+   * [Displays categories:"Movies","Food"]
+   * [Tabs in tabbar: "Home","Search",Favorites"]
+* [Category-specific-page ie:"Food"]
+  * [Display table with corresponding places ie:"McDonalds"]
+* [Place details page corresponding to cell from category table]
+  * [Display information about the place/event]
+* [Search tab -> Maps page]
+  * [Search for specific place/activity -> give details and allow to reserve/book event]
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* [Home Tab]
+* [Map Search Tab]
+* [User favorite Tab]
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
-
+* [Login page]
+   * [Home page]
+* [Home page w/categories]
+   * [Home tab]
+   * [Map Search tab]
+   * [Favorite tab]
+* [Map Search tab]
+   * [Map and search for places]
+* [Home page w/ categories]
+   * [List matching corresponding category]
+   * [Click cell to view More Details page]
+* [Category details page]
+   * [Allows for booking/reserving the place/activity]
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
 <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
