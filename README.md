@@ -28,7 +28,6 @@ Create an app for tourists who want to know about local food, movies, and physic
 
 **Required Must-have Stories**
 
-* [fill in your required user stories here]
 * User login
 * Save user data(favorites)
 * Find user's current location using appropriate privacy settings
