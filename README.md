@@ -11,7 +11,7 @@ Group Project - README Template
 
 ## Overview
 ### Description
-[Create an app for tourists who want to know about local food, movies, and physical events in relation to their current location.]
+Create an app for tourists who want to know about local food, movies, and physical events in relation to their current location.
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
@@ -39,49 +39,49 @@ Group Project - README Template
 
 **Optional Nice-to-have Stories**
 
-* [Add pins to display favorites or searched items]
+* Add pins on map to display favorites or searched items
 
 
 ### 2. Screen Archetypes
 
-* [Login page]
-   * [User enters login valid information]
-* [Home page]
-   * [Displays categories:"Movies","Food"]
-   * [Tabs in tabbar: "Home","Search",Favorites"]
-* [Category-specific-page ie:"Food"]
-  * [Display table with corresponding places ie:"McDonalds"]
-* [Place details page corresponding to cell from category table]
-  * [Display information about the place/event, booking button]
-* [Search tab -> Maps page]
-  * [Search for specific place/activity -> give details and allow to reserve/book event]
+* Login page
+   * User enters login valid information
+* Home page
+   * Displays categories: "Movies", "Food"
+   * Tabs in tabbar: "Home", "Search", "Favorites"
+* Category-specific-page ie: "Food"
+  * Display table with corresponding places ie: "McDonalds"
+* Place details page corresponding to cell from category table
+  * Display information about the place/event, booking button
+* Search tab -> Maps page
+  * Search for specific place/activity -> give details and allow to reserve/book event
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* [Home Tab]
-* [Map Search Tab]
-* [User favorite Tab]
+* Home Tab
+* Map Search Tab
+* User favorite Tab
 
 **Flow Navigation** (Screen to Screen)
 
-* [Login page]
-   * [Home page]
-* [Home page w/categories]
-   * [Home tab]
-   * [Map Search tab]
-   * [Favorite tab]
-* [Home page w/ categories]
-   * [List matching corresponding category]
-   * [Click cell to view More Details page]
-* [Category details page]
-   * [Allows for booking/reserving the place/activity]
-* [Map Search tab]
-   * [Map and search for places]
+* Login page
+   * Home page
+* Home page w/categories
+   * Home tab
+   * Map Search tab
+   * Favorite tab
+* Home page w/ categories
+   * List matching corresponding category
+   * Click cell to view More Details page
+* Category details page
+   * Allows for booking/reserving the place/activity
+* Map Search tab
+   * Map and search for places
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
+Add picture of your hand sketched wireframes in this section
 <img src="https://i.imgur.com/eyTqj2Z.jpg" width=600>
 ### [BONUS] Digital Wireframes & Mockups
 
