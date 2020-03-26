@@ -87,6 +87,8 @@ Add picture of your hand sketched wireframes in this section
 ### [BONUS] Interactive Prototype
 
 ## Schema 
+
+### Models
   | User     | Type   |
   | -------- | ------ |
   | username | String |
@@ -113,10 +115,7 @@ Add picture of your hand sketched wireframes in this section
   | booked?             | Boolean         | has the user booked this place? |
   | Date                | Date            | date of reservation
   | Time                | Time            | time of reservation
-  
 
-### Models
-[Add table of models]
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
