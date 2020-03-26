@@ -117,7 +117,7 @@ Add picture of your hand sketched wireframes in this section
   | Time                | Time            | time of reservation
 
 ### Networking
-- [Add list of network requests by screen ]
+**List of network requests by screen**
 * Login/SignUp Screen
    * (POST) creates new user
    * (GET) allows user to login
