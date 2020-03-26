@@ -105,11 +105,11 @@ Add picture of your hand sketched wireframes in this section
   | Bookings            | Type            |  Description |
   | ------------------- | --------------- | ------------ |
   | username            | Pointer to User | unique username for the user (default field) |
-  | name (business)     | String          | name of favorited place |
-  | image               | File            | image of favorited place |
-  | address             | String          | address of favorited place |
-  | phone number        | String          | phone number of favorited place |
-  | coordinates         | Number          | coordinates of favorited palace (later to be used with MapKit) |
+  | name (business)     | String          | name of booked place |
+  | image               | File            | image of booked place |
+  | address             | String          | address of booked place |
+  | phone number        | String          | phone number of booked place |
+  | coordinates         | Number          | coordinates of booked palace (later to be used with MapKit) |
   | booked?             | Boolean         | has the user booked this place? |
   | Date                | Date            | date of reservation
   | Time                | Time            | time of reservation
