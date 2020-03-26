@@ -87,7 +87,34 @@ Add picture of your hand sketched wireframes in this section
 ### [BONUS] Interactive Prototype
 
 ## Schema 
-[This section will be completed in Unit 9]
+  | User     | Type   |
+  | -------- | ------ |
+  | username | String |
+  | password | String |
+
+  | Favorites      | Type            | Description  |
+  | -------------- | --------------- | ------------ |
+  | username       | Pointer to User | unique username for the user (default field) |
+  | name (business)| String          | name of favorited place |
+  | image          | File            | image of favorited place |
+  | address        | String          | address of favorited place |
+  | phone number   | String          | phone number of favorited place |
+  | coordinates    | Number          | coordinates of favorited palace (later to be used with MapKit) |
+  | booked?        | Boolean         | has the user booked this place? |
+  
+  | Bookings            | Type            |  Description |
+  | ------------------- | --------------- | ------------ |
+  | username            | Pointer to User | unique username for the user (default field) |
+  | name (business)     | String          | name of favorited place |
+  | image               | File            | image of favorited place |
+  | address             | String          | address of favorited place |
+  | phone number        | String          | phone number of favorited place |
+  | coordinates         | Number          | coordinates of favorited palace (later to be used with MapKit) |
+  | booked?             | Boolean         | has the user booked this place? |
+  | Date                | Date            | date of reservation
+  | Time                | Time            | time of reservation
+  
+
 ### Models
 [Add table of models]
 ### Networking
