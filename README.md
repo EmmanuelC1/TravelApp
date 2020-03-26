@@ -118,5 +118,18 @@ Add picture of your hand sketched wireframes in this section
 
 ### Networking
 - [Add list of network requests by screen ]
+** Login/SignUp Screen **
+   - (POST) creates new user
+   - (GET) allows user to login
+** Home Screen **
+   - (GET) Retrieves basic categories from API
+** Favorites Screen **
+   - (GET) Retrieves user's favorites
+** Map/Search Screen ** 
+   - (GET) Gets user location information (in compliance with privacy settings)
+   - (GET) Gets search information from API
+** Detail Screen **
+   - (GET) retrieves detailed information depending on place/event
+
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
