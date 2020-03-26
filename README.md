@@ -120,6 +120,7 @@ Add picture of your hand sketched wireframes in this section
 **List of network requests by screen**
 * Login/SignUp Screen
    * (POST) creates new user
+   <img src="https://imgur.com/nYYijVq">
    * (GET) allows user to login
 * Home Screen 
    * (GET) Retrieves basic categories from API
