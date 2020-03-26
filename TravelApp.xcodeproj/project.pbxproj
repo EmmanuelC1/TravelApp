@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		145E8DBE242C15DD00FB5B37 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E8DBD242C15DD00FB5B37 /* LoginViewController.swift */; };
+		145E8DC0242C16CD00FB5B37 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E8DBF242C16CD00FB5B37 /* HomeViewController.swift */; };
 		14DAC62F24170D5100A171BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DAC62E24170D5100A171BA /* AppDelegate.swift */; };
 		14DAC63124170D5100A171BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DAC63024170D5100A171BA /* SceneDelegate.swift */; };
 		14DAC63324170D5100A171BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DAC63224170D5100A171BA /* ViewController.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		145E8DBD242C15DD00FB5B37 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		145E8DBF242C16CD00FB5B37 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		14DAC62B24170D5100A171BA /* TravelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14DAC62E24170D5100A171BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14DAC63024170D5100A171BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +127,8 @@
 				14DAC63924170D5700A171BA /* LaunchScreen.storyboard */,
 				14DAC63724170D5700A171BA /* Assets.xcassets */,
 				14DAC63C24170D5700A171BA /* Info.plist */,
+				145E8DBD242C15DD00FB5B37 /* LoginViewController.swift */,
+				145E8DBF242C16CD00FB5B37 /* HomeViewController.swift */,
 			);
 			path = TravelApp;
 			sourceTree = "<group>";
@@ -155,7 +161,6 @@
 				EC72209A78B4AA03E1CBD02F /* Pods-TravelAppTests.debug.xcconfig */,
 				3713DA6B9FEF7193AE8E6639 /* Pods-TravelAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -408,6 +413,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				145E8DC0242C16CD00FB5B37 /* HomeViewController.swift in Sources */,
+				145E8DBE242C15DD00FB5B37 /* LoginViewController.swift in Sources */,
 				14DAC63324170D5100A171BA /* ViewController.swift in Sources */,
 				14DAC62F24170D5100A171BA /* AppDelegate.swift in Sources */,
 				14DAC63124170D5100A171BA /* SceneDelegate.swift in Sources */,
