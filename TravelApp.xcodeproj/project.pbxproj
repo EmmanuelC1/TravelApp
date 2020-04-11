@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		145E8DBE242C15DD00FB5B37 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E8DBD242C15DD00FB5B37 /* LoginViewController.swift */; };
-		145E8DC0242C16CD00FB5B37 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145E8DBF242C16CD00FB5B37 /* HomeViewController.swift */; };
 		14DAC62F24170D5100A171BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DAC62E24170D5100A171BA /* AppDelegate.swift */; };
 		14DAC63124170D5100A171BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DAC63024170D5100A171BA /* SceneDelegate.swift */; };
 		14DAC63324170D5100A171BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DAC63224170D5100A171BA /* ViewController.swift */; };
@@ -19,11 +18,10 @@
 		14DAC65124170D5800A171BA /* TravelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DAC65024170D5800A171BA /* TravelAppUITests.swift */; };
 		4B6E6E560BD98491950F2FB1 /* Pods_TravelAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05CB6CFD3D1F18D7AE55AF1 /* Pods_TravelAppTests.framework */; };
 		4C2FF495A3C5AD0E9C24520B /* Pods_TravelApp_TravelAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE6CD90F434A1971C8C9A35 /* Pods_TravelApp_TravelAppUITests.framework */; };
-		9160ADCE243F17C1003BE96C /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9160ADCD243F17C1003BE96C /* KingfisherSwiftUI */; };
-		9160ADCF243F17C1003BE96C /* KingfisherSwiftUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 9160ADCD243F17C1003BE96C /* KingfisherSwiftUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9160ADD3243F1890003BE96C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 9160ADD2243F1890003BE96C /* Moya */; };
 		9160ADD7243F199B003BE96C /* API.json in Resources */ = {isa = PBXBuildFile; fileRef = 9160ADD6243F199B003BE96C /* API.json */; };
 		91B576DD244141C300007038 /* YelpAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B576DC244141C300007038 /* YelpAPICaller.swift */; };
+		91B576DF2441651700007038 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B576DE2441651700007038 /* HomeTableViewCell.swift */; };
+		91B576E32441C56F00007038 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B576E22441C56F00007038 /* HomeViewController.swift */; };
 		FCE6C0BAC7E24DE3879A74E7 /* Pods_TravelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 935BFB8301743EB3B84B01F8 /* Pods_TravelApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +49,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9160ADCF243F17C1003BE96C /* KingfisherSwiftUI in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,7 +57,6 @@
 
 /* Begin PBXFileReference section */
 		145E8DBD242C15DD00FB5B37 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		145E8DBF242C16CD00FB5B37 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		14DAC62B24170D5100A171BA /* TravelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14DAC62E24170D5100A171BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14DAC63024170D5100A171BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +76,8 @@
 		850711CE30351BF38E84AE21 /* Pods-TravelApp-TravelAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelApp-TravelAppUITests.release.xcconfig"; path = "Target Support Files/Pods-TravelApp-TravelAppUITests/Pods-TravelApp-TravelAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9160ADD6243F199B003BE96C /* API.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = API.json; sourceTree = "<group>"; };
 		91B576DC244141C300007038 /* YelpAPICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPICaller.swift; sourceTree = "<group>"; };
+		91B576DE2441651700007038 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		91B576E22441C56F00007038 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		935BFB8301743EB3B84B01F8 /* Pods_TravelApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFA6DFE260796761AC28998 /* Pods-TravelApp-TravelAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelApp-TravelAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-TravelApp-TravelAppUITests/Pods-TravelApp-TravelAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A05CB6CFD3D1F18D7AE55AF1 /* Pods_TravelAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,9 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9160ADCE243F17C1003BE96C /* KingfisherSwiftUI in Frameworks */,
 				FCE6C0BAC7E24DE3879A74E7 /* Pods_TravelApp.framework in Frameworks */,
-				9160ADD3243F1890003BE96C /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,8 +148,9 @@
 				14DAC63724170D5700A171BA /* Assets.xcassets */,
 				14DAC63C24170D5700A171BA /* Info.plist */,
 				145E8DBD242C15DD00FB5B37 /* LoginViewController.swift */,
-				145E8DBF242C16CD00FB5B37 /* HomeViewController.swift */,
 				91B576DC244141C300007038 /* YelpAPICaller.swift */,
+				91B576DE2441651700007038 /* HomeTableViewCell.swift */,
+				91B576E22441C56F00007038 /* HomeViewController.swift */,
 			);
 			path = TravelApp;
 			sourceTree = "<group>";
@@ -235,8 +232,6 @@
 			);
 			name = TravelApp;
 			packageProductDependencies = (
-				9160ADCD243F17C1003BE96C /* KingfisherSwiftUI */,
-				9160ADD2243F1890003BE96C /* Moya */,
 			);
 			productName = TravelApp;
 			productReference = 14DAC62B24170D5100A171BA /* TravelApp.app */;
@@ -314,8 +309,6 @@
 			);
 			mainGroup = 14DAC62224170D5100A171BA;
 			packageReferences = (
-				9160ADCC243F17C1003BE96C /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				9160ADD1243F1890003BE96C /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 14DAC62C24170D5100A171BA /* Products */;
 			projectDirPath = "";
@@ -464,11 +457,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				145E8DC0242C16CD00FB5B37 /* HomeViewController.swift in Sources */,
 				145E8DBE242C15DD00FB5B37 /* LoginViewController.swift in Sources */,
+				91B576DF2441651700007038 /* HomeTableViewCell.swift in Sources */,
 				14DAC63324170D5100A171BA /* ViewController.swift in Sources */,
 				14DAC62F24170D5100A171BA /* AppDelegate.swift in Sources */,
 				14DAC63124170D5100A171BA /* SceneDelegate.swift in Sources */,
+				91B576E32441C56F00007038 /* HomeViewController.swift in Sources */,
 				91B576DD244141C300007038 /* YelpAPICaller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -798,38 +792,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		9160ADCC243F17C1003BE96C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.13.3;
-			};
-		};
-		9160ADD1243F1890003BE96C /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 14.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		9160ADCD243F17C1003BE96C /* KingfisherSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9160ADCC243F17C1003BE96C /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = KingfisherSwiftUI;
-		};
-		9160ADD2243F1890003BE96C /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9160ADD1243F1890003BE96C /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 14DAC62324170D5100A171BA /* Project object */;
 }

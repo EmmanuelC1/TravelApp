@@ -13,13 +13,11 @@ PODS:
     - Parse/Core (= 1.17.3)
   - Parse/Core (1.17.3):
     - Bolts/Tasks (~> 1.9)
-  - YelpAPI (3.0.0)
 
 DEPENDENCIES:
   - AlamofireImage
   - CDYelpFusionKit
   - Parse
-  - YelpAPI (~> 3.0)
 
 SPEC REPOS:
   trunk:
@@ -30,7 +28,6 @@ SPEC REPOS:
     - CDYelpFusionKit
     - ObjectMapper
     - Parse
-    - YelpAPI
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -40,8 +37,7 @@ SPEC CHECKSUMS:
   CDYelpFusionKit: 94a7802fa23ef0eb78514c8a6f246f55b6bc91f0
   ObjectMapper: b53ae947d370bf89423e86be7d4e2d2b2a8d3f40
   Parse: c1ad2a04d2cab2b54b6fb7da05f741abf2cf57d1
-  YelpAPI: 9ae0ee45b998d306c1aff9b2d966dc23121f191e
 
-PODFILE CHECKSUM: 57886ba48fa742d134c8bb8020ad7c3752d60a8b
+PODFILE CHECKSUM: c80253695f774b75fcd3a4d825b23a7713ad77e5
 
 COCOAPODS: 1.8.4

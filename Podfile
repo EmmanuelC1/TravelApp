@@ -7,7 +7,6 @@ target 'TravelApp' do
 
   # Pods for TravelApp
   pod "CDYelpFusionKit"
-  pod "YelpAPI", "~> 3.0"
   pod "Parse"
   pod "AlamofireImage"
 
