@@ -2,29 +2,46 @@ PODS:
   - Alamofire (4.9.1)
   - AlamofireImage (3.6.0):
     - Alamofire (~> 4.9)
+  - AlamofireObjectMapper (5.2.0):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
   - Bolts/Tasks (1.9.0)
+  - CDYelpFusionKit (1.5.1):
+    - AlamofireObjectMapper (= 5.2.0)
+  - ObjectMapper (3.5.2)
   - Parse (1.17.3):
     - Parse/Core (= 1.17.3)
   - Parse/Core (1.17.3):
     - Bolts/Tasks (~> 1.9)
+  - YelpAPI (3.0.0)
 
 DEPENDENCIES:
   - AlamofireImage
+  - CDYelpFusionKit
   - Parse
+  - YelpAPI (~> 3.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
+    - AlamofireObjectMapper
     - Bolts
+    - CDYelpFusionKit
+    - ObjectMapper
     - Parse
+    - YelpAPI
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
+  AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  CDYelpFusionKit: 94a7802fa23ef0eb78514c8a6f246f55b6bc91f0
+  ObjectMapper: b53ae947d370bf89423e86be7d4e2d2b2a8d3f40
   Parse: c1ad2a04d2cab2b54b6fb7da05f741abf2cf57d1
+  YelpAPI: 9ae0ee45b998d306c1aff9b2d966dc23121f191e
 
-PODFILE CHECKSUM: 9119c7b4b1091d81719368db2f07135f3484d865
+PODFILE CHECKSUM: 57886ba48fa742d134c8bb8020ad7c3752d60a8b
 
 COCOAPODS: 1.8.4

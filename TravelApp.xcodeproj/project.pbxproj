@@ -23,6 +23,7 @@
 		9160ADCF243F17C1003BE96C /* KingfisherSwiftUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 9160ADCD243F17C1003BE96C /* KingfisherSwiftUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9160ADD3243F1890003BE96C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 9160ADD2243F1890003BE96C /* Moya */; };
 		9160ADD7243F199B003BE96C /* API.json in Resources */ = {isa = PBXBuildFile; fileRef = 9160ADD6243F199B003BE96C /* API.json */; };
+		91B576DD244141C300007038 /* YelpAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B576DC244141C300007038 /* YelpAPICaller.swift */; };
 		FCE6C0BAC7E24DE3879A74E7 /* Pods_TravelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 935BFB8301743EB3B84B01F8 /* Pods_TravelApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		3713DA6B9FEF7193AE8E6639 /* Pods-TravelAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelAppTests.release.xcconfig"; path = "Target Support Files/Pods-TravelAppTests/Pods-TravelAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		850711CE30351BF38E84AE21 /* Pods-TravelApp-TravelAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelApp-TravelAppUITests.release.xcconfig"; path = "Target Support Files/Pods-TravelApp-TravelAppUITests/Pods-TravelApp-TravelAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9160ADD6243F199B003BE96C /* API.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = API.json; sourceTree = "<group>"; };
+		91B576DC244141C300007038 /* YelpAPICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPICaller.swift; sourceTree = "<group>"; };
 		935BFB8301743EB3B84B01F8 /* Pods_TravelApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFA6DFE260796761AC28998 /* Pods-TravelApp-TravelAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelApp-TravelAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-TravelApp-TravelAppUITests/Pods-TravelApp-TravelAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A05CB6CFD3D1F18D7AE55AF1 /* Pods_TravelAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +153,7 @@
 				14DAC63C24170D5700A171BA /* Info.plist */,
 				145E8DBD242C15DD00FB5B37 /* LoginViewController.swift */,
 				145E8DBF242C16CD00FB5B37 /* HomeViewController.swift */,
+				91B576DC244141C300007038 /* YelpAPICaller.swift */,
 			);
 			path = TravelApp;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				14DAC63324170D5100A171BA /* ViewController.swift in Sources */,
 				14DAC62F24170D5100A171BA /* AppDelegate.swift in Sources */,
 				14DAC63124170D5100A171BA /* SceneDelegate.swift in Sources */,
+				91B576DD244141C300007038 /* YelpAPICaller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

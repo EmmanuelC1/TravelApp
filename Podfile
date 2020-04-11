@@ -6,6 +6,8 @@ target 'TravelApp' do
   use_frameworks!
 
   # Pods for TravelApp
+  pod "CDYelpFusionKit"
+  pod "YelpAPI", "~> 3.0"
   pod "Parse"
   pod "AlamofireImage"
 
