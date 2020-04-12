@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class DetailsViewController: UIViewController {
+    
+    @IBOutlet weak var businessName: UILabel!
+    @IBOutlet weak var businessImage: UIImageView!
+    @IBOutlet weak var businessAddress: UILabel!
+    @IBOutlet weak var businessPhone: UILabel!
+    //Need to configure extra label & Book Button
     
     var choice: [String:Any]!
 
@@ -16,6 +23,11 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        businessName.text = choice["name"] as? String
+        businessName.sizeToFit()
+        businessImage.af_setImage(withURL: choice["image_url"] as! URL)
+        businessAddress.text = choice["display_address"] as? String
+        businessPhone.text = choice["display_phone"] as? String
     }
     
 

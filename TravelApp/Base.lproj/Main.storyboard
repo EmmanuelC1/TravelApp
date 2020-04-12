@@ -158,6 +158,12 @@
                         <viewLayoutGuide key="safeArea" id="kYi-Co-3fg"/>
                     </view>
                     <navigationItem key="navigationItem" id="1i0-Rd-WjO"/>
+                    <connections>
+                        <outlet property="businessAddress" destination="D27-Gq-BbM" id="v5X-Dr-G7g"/>
+                        <outlet property="businessImage" destination="Xl7-cD-YGG" id="scr-JZ-7qH"/>
+                        <outlet property="businessName" destination="SuB-Oo-SMh" id="VTa-05-wkb"/>
+                        <outlet property="businessPhone" destination="crE-3Y-cfC" id="cEr-kT-Euw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRz-Z3-QT1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
