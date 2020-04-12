@@ -30,13 +30,16 @@ class DetailsViewController: UIViewController {
         let posterUrl = URL(string: ((choice["image_url"] as? String)!))
         businessImage.af_setImage(withURL: posterUrl!)
         
-        // Issue trying to display address
+        // Address displays but likely unsafe.
+        // Prints check values of my dictionaries/arrays
         print(choice["location"]!)
+        // Get just the display_address portion out of location, so basically
+        // businessChoice["location"]["display_address"]
         addy = choice["location"] as? [String:Any]
         print(addy["display_address"]!)
-        //This displays the address but with extra unwanted "Optional", parenthesis and square brackets
+        // This displays the address, but with [] around and likely un-safe
         businessAddress.text = "\(String(describing: addy["display_address"]!))"
-        //businessAddress.text = addy["display_address"] as? String
+        //businessAddress.text = addy["display_address"] as? String // This does not work, displays nothing
         businessAddress.sizeToFit()
         
         businessPhone.text = choice["display_phone"] as? String
