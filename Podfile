@@ -4,10 +4,11 @@
 target 'TravelApp' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
+  #use_modular_headers!
   # Pods for TravelApp
-  pod "Parse"
-  pod "AlamofireImage"
+  pod 'Parse'
+  pod 'AlamofireImage','~> 3.5'
+  pod 'MessageInputBar'
 
   target 'TravelAppTests' do
     inherit! :search_paths

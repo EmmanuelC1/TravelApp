@@ -8,13 +8,23 @@
 
 import UIKit
 import MapKit
+import MessageInputBar
 
-class MapViewController: ViewController {
+struct restaurants {
+    var name: String
+    var latitude: CLLocationDegrees
+    var longitude: CLLocationDegrees
+}
 
+class MapViewController: ViewController, MessageInputBarDelegate {
+    @IBOutlet weak var searchInput: UITextField!
+    
     @IBOutlet weak var MapView: MKMapView!
     
     let locationManager = CLLocationManager()
-    
+    let searchBar = MessageInputBar()
+    var showsSearchBar = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //checkLocationStatus()
@@ -24,8 +34,23 @@ class MapViewController: ViewController {
         } else {
             print("Error with location")
         }
+        
+        searchBar.inputTextView.placeholder = "Add a comment..."
+        searchBar.sendButton.title = "Search"
+        searchBar.delegate = self
     }
-    
+//    @objc func keyboardWillBeHidden(note: Notification){
+//           searchBar.inputTextView.text = nil
+//           showsSearchBar = false
+//           becomeFirstResponder()
+//
+//       }
+    override var inputAccessoryView: UIView?{
+        return searchBar
+    }
+    override var canBecomeFirstResponder: Bool{
+        return showsSearchBar
+    }
 //    func checkLocationStatus(){
 //
 //    }
