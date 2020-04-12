@@ -35,7 +35,7 @@ class DetailsViewController: UIViewController {
         addy = choice["location"] as? [String:Any]
         print(addy["display_address"]!)
         //This displays the address but with extra unwanted "Optional", parenthesis and square brackets
-        businessAddress.text = "\(String(describing: addy["display_address"]))"
+        businessAddress.text = "\(String(describing: addy["display_address"]!))"
         //businessAddress.text = addy["display_address"] as? String
         businessAddress.sizeToFit()
         
