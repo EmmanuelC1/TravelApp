@@ -78,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="42" y="-596"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="A1a-9y-FXP">
             <objects>
-                <viewController id="r3D-E3-KqC" sceneMemberID="viewController">
+                <viewController id="r3D-E3-KqC" userLabel="Map View Controller" customClass="MapViewController" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M8c-34-0MC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,7 +92,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="L5j-Ry-Ena">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L5j-Ry-Ena">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="438"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
@@ -103,6 +103,9 @@
                     <navigationItem key="navigationItem" id="cKh-VJ-QLs">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="yWU-qU-2bs"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="MapView" destination="L5j-Ry-Ena" id="4On-Dc-3fa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bk1-qM-LmQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

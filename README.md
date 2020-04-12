@@ -87,10 +87,51 @@ Add picture of your hand sketched wireframes in this section
 ### [BONUS] Interactive Prototype
 
 ## Schema 
-[This section will be completed in Unit 9]
+
 ### Models
-[Add table of models]
+  | User     | Type   |
+  | -------- | ------ |
+  | username | String |
+  | password | String |
+
+  | Favorites      | Type            | Description  |
+  | -------------- | --------------- | ------------ |
+  | username       | Pointer to User | unique username for the user (default field) |
+  | name (business)| String          | name of favorited place |
+  | image          | File            | image of favorited place |
+  | address        | String          | address of favorited place |
+  | phone number   | String          | phone number of favorited place |
+  | coordinates    | Number          | coordinates of favorited palace (later to be used with MapKit) |
+  | booked?        | Boolean         | has the user booked this place? |
+  
+  | Bookings            | Type            |  Description |
+  | ------------------- | --------------- | ------------ |
+  | username            | Pointer to User | unique username for the user (default field) |
+  | name (business)     | String          | name of booked place |
+  | image               | File            | image of booked place |
+  | address             | String          | address of booked place |
+  | phone number        | String          | phone number of booked place |
+  | coordinates         | Number          | coordinates of booked palace (later to be used with MapKit) |
+  | booked?             | Boolean         | has the user booked this place? |
+  | Date                | Date            | date of reservation
+  | Time                | Time            | time of reservation
+
 ### Networking
-- [Add list of network requests by screen ]
+**List of network requests by screen**
+* Login/SignUp Screen
+   * (POST) creates new user
+   <img src="https://imgur.com/nYYijVq.jpg" width=500>
+   
+   * (GET) allows user to login
+* Home Screen 
+   * (GET) Retrieves basic categories from API
+* Favorites Screen
+   * (GET) Retrieves user's favorites
+* Map/Search Screen  
+   * (GET) Gets user location information (in compliance with privacy settings)
+   * (GET) Gets search information from API
+* Detail Screen
+   * (GET) retrieves detailed information depending on place/event
+
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
