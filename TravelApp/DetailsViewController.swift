@@ -40,6 +40,9 @@ class DetailsViewController: UIViewController {
         businessAddress.sizeToFit()
         
         businessPhone.text = choice["display_phone"] as? String
+        if choice["display_phone"] as? String == ""{
+            businessPhone.text = "No number available"
+        }
         print(self.choice!)
     }
     
