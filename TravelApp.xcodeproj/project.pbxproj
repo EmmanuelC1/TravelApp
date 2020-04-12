@@ -22,6 +22,7 @@
 		91B576DF2441651700007038 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B576DE2441651700007038 /* HomeTableViewCell.swift */; };
 		91B576E32441C56F00007038 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B576E22441C56F00007038 /* HomeViewController.swift */; };
 		91B576E52442C5B700007038 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B576E42442C5B700007038 /* DetailsViewController.swift */; };
+		91B576E724432EF000007038 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B576E624432EF000007038 /* BookingViewController.swift */; };
 		FCE6C0BAC7E24DE3879A74E7 /* Pods_TravelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 935BFB8301743EB3B84B01F8 /* Pods_TravelApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		91B576DE2441651700007038 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		91B576E22441C56F00007038 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		91B576E42442C5B700007038 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		91B576E624432EF000007038 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		935BFB8301743EB3B84B01F8 /* Pods_TravelApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFA6DFE260796761AC28998 /* Pods-TravelApp-TravelAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelApp-TravelAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-TravelApp-TravelAppUITests/Pods-TravelApp-TravelAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A05CB6CFD3D1F18D7AE55AF1 /* Pods_TravelAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +153,7 @@
 				91B576DE2441651700007038 /* HomeTableViewCell.swift */,
 				91B576E22441C56F00007038 /* HomeViewController.swift */,
 				91B576E42442C5B700007038 /* DetailsViewController.swift */,
+				91B576E624432EF000007038 /* BookingViewController.swift */,
 			);
 			path = TravelApp;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				145E8DBE242C15DD00FB5B37 /* LoginViewController.swift in Sources */,
+				91B576E724432EF000007038 /* BookingViewController.swift in Sources */,
 				91B576DF2441651700007038 /* HomeTableViewCell.swift in Sources */,
 				14DAC63324170D5100A171BA /* ViewController.swift in Sources */,
 				91B576E52442C5B700007038 /* DetailsViewController.swift in Sources */,

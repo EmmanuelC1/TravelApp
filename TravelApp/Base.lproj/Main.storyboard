@@ -137,11 +137,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOA-ml-O80">
-                                <rect key="frame" x="186" y="632" width="70" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELU-Ph-0Pz">
+                                <rect key="frame" x="48" y="487" width="54" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Book Now"/>
-                            </button>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xl7-cD-YGG">
                                 <rect key="frame" x="87" y="170" width="240" height="234"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -153,19 +155,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELU-Ph-0Pz">
-                                <rect key="frame" x="48" y="487" width="54" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOA-ml-O80">
+                                <rect key="frame" x="172" y="602" width="70" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Book Now"/>
+                                <connections>
+                                    <segue destination="hQV-NG-4iW" kind="show" id="jGs-MM-z4A"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="kYi-Co-3fg"/>
                     </view>
                     <navigationItem key="navigationItem" id="1i0-Rd-WjO"/>
                     <connections>
+                        <outlet property="bookButton" destination="OOA-ml-O80" id="uZe-kx-5qI"/>
                         <outlet property="businessAddress" destination="D27-Gq-BbM" id="v5X-Dr-G7g"/>
                         <outlet property="businessImage" destination="Xl7-cD-YGG" id="scr-JZ-7qH"/>
                         <outlet property="businessName" destination="SuB-Oo-SMh" id="VTa-05-wkb"/>
@@ -176,10 +180,10 @@
             </objects>
             <point key="canvasLocation" x="40.579710144927539" y="2409.7826086956525"/>
         </scene>
-        <!--View Controller-->
+        <!--Booking View Controller-->
         <scene sceneID="gq3-LB-23p">
             <objects>
-                <viewController id="hQV-NG-4iW" sceneMemberID="viewController">
+                <viewController id="hQV-NG-4iW" customClass="BookingViewController" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O4G-At-cI9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -399,24 +403,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jFQ-t0-d6X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="43" y="151"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Qdl-zu-6pp">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ewk-Ua-L0v" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a7r-al-hQo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="hQV-NG-4iW" kind="relationship" relationship="rootViewController" id="OeI-YZ-Cx3"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xQH-ud-lh4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-826" y="3147"/>
         </scene>
         <!--Home-->
         <scene sceneID="i3P-Dx-9Ir">

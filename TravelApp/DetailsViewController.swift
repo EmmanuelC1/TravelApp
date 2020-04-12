@@ -16,6 +16,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var businessAddress: UILabel!
     @IBOutlet weak var businessPhone: UILabel!
     //Need to configure extra label & Book Button
+    @IBOutlet weak var bookButton: UIButton!
     
     var choice: [String:Any]!
     var addy: [String:Any]!
