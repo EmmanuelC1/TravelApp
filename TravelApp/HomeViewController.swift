@@ -14,26 +14,21 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var tableView: UITableView!
     
-    var posts = [PFObject]()
+    var business = [[String:Any]]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return business.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as! HomeTableViewCell
         
-        CDYelpFusionKitManager.shared.apiClient.cancelAllPendingAPIRequests()
-        CDYelpFusionKitManager.shared.apiClient.searchBusinesses(byTerm: "Food", location: "San Francisco", latitude: nil, longitude: nil, radius: 10000, categories: [.activeLife, .food], locale: .english_unitedStates, limit: 1, offset: 0, sortBy: .rating, priceTiers: [.oneDollarSign, .twoDollarSigns], openNow: nil, openAt: nil, attributes: nil) { (response) in
-            
-            if let response = response,
-                let businesses = response.businesses,
-                businesses.count > 0 {
-                print(businesses)
-                print(businesses.toJSON())
-            }
-        }
+        let index = business[0]
+        let name = index["name"] as! String
+        
+        cell.restaurantNameLabel.text = name
+        
         
         return cell
     }
@@ -44,6 +39,22 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        CDYelpFusionKitManager.shared.apiClient.cancelAllPendingAPIRequests()
+        CDYelpFusionKitManager.shared.apiClient.searchBusinesses(byTerm: "Food", location: "San Francisco", latitude: nil, longitude: nil, radius: 10000, categories: [.activeLife, .food], locale: .english_unitedStates, limit: 1, offset: 0, sortBy: .rating, priceTiers: [.oneDollarSign, .twoDollarSigns], openNow: nil, openAt: nil, attributes: nil) { (response) in
+            
+            if let response = response,
+                let businesses = response.businesses,
+                businesses.count > 0 {
+                //print(businesses)
+                //print(businesses.toJSON())
+                    
+                self.business = businesses.toJSON()
+                print(self.business)
+                self.tableView.reloadData()
+                
+            }
+        }
 
         // Do any additional setup after loading the view.
     }
