@@ -111,7 +111,7 @@
         <!--Details-->
         <scene sceneID="v14-J5-ChX">
             <objects>
-                <viewController title="Details" id="3mU-Ha-99B" sceneMemberID="viewController">
+                <viewController title="Details" id="3mU-Ha-99B" customClass="DetailsViewController" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jFz-ZU-lLD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRz-Z3-QT1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="42" y="2609"/>
+            <point key="canvasLocation" x="42" y="2410"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gq3-LB-23p">
@@ -219,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Hr-Iu-dSZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="42" y="3470"/>
+            <point key="canvasLocation" x="42" y="3147"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="9cl-7A-nh7">
@@ -348,6 +348,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="restaurantNameLabel" destination="6G3-hw-SmE" id="pN9-O0-bmI"/>
+                                            <segue destination="3mU-Ha-99B" kind="show" id="Dnf-lh-Iwk"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -387,24 +388,6 @@
             <point key="canvasLocation" x="43" y="151"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="0O0-Pu-RQ0">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y3e-Ig-Wmw" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m8F-x4-0R4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="3mU-Ha-99B" kind="relationship" relationship="rootViewController" id="Lm3-nY-Pyz"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zVJ-0Z-FBH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-794" y="2609"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="Qdl-zu-6pp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ewk-Ua-L0v" sceneMemberID="viewController">
@@ -420,7 +403,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xQH-ud-lh4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-794" y="3470"/>
+            <point key="canvasLocation" x="-826" y="3147"/>
         </scene>
         <!--Home-->
         <scene sceneID="i3P-Dx-9Ir">

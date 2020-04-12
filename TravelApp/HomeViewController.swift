@@ -24,8 +24,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as! HomeTableViewCell
         
-        let index = business[indexPath.row]
-        let name = index["name"] as! String
+        let choice = business[indexPath.row]
+        let name = choice["name"] as! String
         
         cell.restaurantNameLabel.text = name
         
@@ -69,5 +69,22 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        //Find the selected movie
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        let choice = business[indexPath.row]
+        
+        //Pass the selected movie to the details view controller
+        let detailsViewController = segue.destination as! DetailsViewController
+        detailsViewController.choice = choice
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
 
 }
