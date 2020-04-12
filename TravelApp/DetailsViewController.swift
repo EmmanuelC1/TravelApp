@@ -18,6 +18,7 @@ class DetailsViewController: UIViewController {
     //Need to configure extra label & Book Button
     
     var choice: [String:Any]!
+    var addy: [String:Any]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +26,21 @@ class DetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
         businessName.text = choice["name"] as? String
         businessName.sizeToFit()
-        businessImage.af_setImage(withURL: choice["image_url"] as! URL)
-        businessAddress.text = choice["display_address"] as? String
+        
+        let posterUrl = URL(string: ((choice["image_url"] as? String)!))
+        businessImage.af_setImage(withURL: posterUrl!)
+        
+        // Issue trying to display address
+        print(choice["location"]!)
+        addy = choice["location"] as? [String:Any]
+        print(addy["display_address"]!)
+        //This displays the address but with extra unwanted "Optional", parenthesis and square brackets
+        businessAddress.text = "\(String(describing: addy["display_address"]))"
+        //businessAddress.text = addy["display_address"] as? String
+        businessAddress.sizeToFit()
+        
         businessPhone.text = choice["display_phone"] as? String
+        print(self.choice!)
     }
     
 
