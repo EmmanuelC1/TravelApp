@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Parse
 import CDYelpFusionKit
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var posts = [PFObject]()
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -23,7 +26,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as! HomeTableViewCell
         
         CDYelpFusionKitManager.shared.apiClient.cancelAllPendingAPIRequests()
-        CDYelpFusionKitManager.shared.apiClient.searchBusinesses(byTerm: "Food", location: "San Francisco", latitude: nil, longitude: nil, radius: 10000, categories: [.activeLife, .food], locale: .english_unitedStates, limit: 5, offset: 0, sortBy: .rating, priceTiers: [.oneDollarSign, .twoDollarSigns], openNow: nil, openAt: nil, attributes: nil) { (response) in
+        CDYelpFusionKitManager.shared.apiClient.searchBusinesses(byTerm: "Food", location: "San Francisco", latitude: nil, longitude: nil, radius: 10000, categories: [.activeLife, .food], locale: .english_unitedStates, limit: 1, offset: 0, sortBy: .rating, priceTiers: [.oneDollarSign, .twoDollarSigns], openNow: nil, openAt: nil, attributes: nil) { (response) in
             
             if let response = response,
                 let businesses = response.businesses,
