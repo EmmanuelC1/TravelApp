@@ -19,6 +19,10 @@
 		244696B0244152B5005DBC59 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244696AF244152B5005DBC59 /* MapViewController.swift */; };
 		4B6E6E560BD98491950F2FB1 /* Pods_TravelAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05CB6CFD3D1F18D7AE55AF1 /* Pods_TravelAppTests.framework */; };
 		4C2FF495A3C5AD0E9C24520B /* Pods_TravelApp_TravelAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE6CD90F434A1971C8C9A35 /* Pods_TravelApp_TravelAppUITests.framework */; };
+		9160ADD7243F199B003BE96C /* API.json in Resources */ = {isa = PBXBuildFile; fileRef = 9160ADD6243F199B003BE96C /* API.json */; };
+		91B576DD244141C300007038 /* YelpAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B576DC244141C300007038 /* YelpAPICaller.swift */; };
+		91B576DF2441651700007038 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B576DE2441651700007038 /* HomeTableViewCell.swift */; };
+		91B576E32441C56F00007038 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B576E22441C56F00007038 /* HomeViewController.swift */; };
 		FCE6C0BAC7E24DE3879A74E7 /* Pods_TravelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 935BFB8301743EB3B84B01F8 /* Pods_TravelApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +42,19 @@
 			remoteInfo = TravelApp;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9160ADD0243F17C1003BE96C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		145E8DBD242C15DD00FB5B37 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +76,10 @@
 		2E93A1EB81D657BA5041AF2D /* Pods-TravelApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelApp.release.xcconfig"; path = "Target Support Files/Pods-TravelApp/Pods-TravelApp.release.xcconfig"; sourceTree = "<group>"; };
 		3713DA6B9FEF7193AE8E6639 /* Pods-TravelAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelAppTests.release.xcconfig"; path = "Target Support Files/Pods-TravelAppTests/Pods-TravelAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		850711CE30351BF38E84AE21 /* Pods-TravelApp-TravelAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelApp-TravelAppUITests.release.xcconfig"; path = "Target Support Files/Pods-TravelApp-TravelAppUITests/Pods-TravelApp-TravelAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9160ADD6243F199B003BE96C /* API.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = API.json; sourceTree = "<group>"; };
+		91B576DC244141C300007038 /* YelpAPICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPICaller.swift; sourceTree = "<group>"; };
+		91B576DE2441651700007038 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		91B576E22441C56F00007038 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		935BFB8301743EB3B84B01F8 /* Pods_TravelApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFA6DFE260796761AC28998 /* Pods-TravelApp-TravelAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelApp-TravelAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-TravelApp-TravelAppUITests/Pods-TravelApp-TravelAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A05CB6CFD3D1F18D7AE55AF1 /* Pods_TravelAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +141,7 @@
 		14DAC62D24170D5100A171BA /* TravelApp */ = {
 			isa = PBXGroup;
 			children = (
+				9160ADD4243F194A003BE96C /* API */,
 				14DAC62E24170D5100A171BA /* AppDelegate.swift */,
 				14DAC63024170D5100A171BA /* SceneDelegate.swift */,
 				14DAC63224170D5100A171BA /* ViewController.swift */,
@@ -130,6 +152,9 @@
 				145E8DBD242C15DD00FB5B37 /* LoginViewController.swift */,
 				145E8DBF242C16CD00FB5B37 /* HomeViewController.swift */,
 				244696AF244152B5005DBC59 /* MapViewController.swift */,
+				91B576DC244141C300007038 /* YelpAPICaller.swift */,
+				91B576DE2441651700007038 /* HomeTableViewCell.swift */,
+				91B576E22441C56F00007038 /* HomeViewController.swift */,
 			);
 			path = TravelApp;
 			sourceTree = "<group>";
@@ -175,6 +200,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9160ADD4243F194A003BE96C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				9160ADD5243F1968003BE96C /* JSON */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		9160ADD5243F1968003BE96C /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				9160ADD6243F199B003BE96C /* API.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -187,12 +228,15 @@
 				14DAC62824170D5100A171BA /* Frameworks */,
 				14DAC62924170D5100A171BA /* Resources */,
 				3F468078FB30A12F6A62A4EB /* [CP] Embed Pods Frameworks */,
+				9160ADD0243F17C1003BE96C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = TravelApp;
+			packageProductDependencies = (
+			);
 			productName = TravelApp;
 			productReference = 14DAC62B24170D5100A171BA /* TravelApp.app */;
 			productType = "com.apple.product-type.application";
@@ -268,6 +312,8 @@
 				Base,
 			);
 			mainGroup = 14DAC62224170D5100A171BA;
+			packageReferences = (
+			);
 			productRefGroup = 14DAC62C24170D5100A171BA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -286,6 +332,7 @@
 			files = (
 				14DAC63B24170D5700A171BA /* LaunchScreen.storyboard in Resources */,
 				14DAC63824170D5700A171BA /* Assets.xcassets in Resources */,
+				9160ADD7243F199B003BE96C /* API.json in Resources */,
 				14DAC63624170D5100A171BA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,9 +464,12 @@
 				145E8DC0242C16CD00FB5B37 /* HomeViewController.swift in Sources */,
 				244696B0244152B5005DBC59 /* MapViewController.swift in Sources */,
 				145E8DBE242C15DD00FB5B37 /* LoginViewController.swift in Sources */,
+				91B576DF2441651700007038 /* HomeTableViewCell.swift in Sources */,
 				14DAC63324170D5100A171BA /* ViewController.swift in Sources */,
 				14DAC62F24170D5100A171BA /* AppDelegate.swift in Sources */,
 				14DAC63124170D5100A171BA /* SceneDelegate.swift in Sources */,
+				91B576E32441C56F00007038 /* HomeViewController.swift in Sources */,
+				91B576DD244141C300007038 /* YelpAPICaller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
