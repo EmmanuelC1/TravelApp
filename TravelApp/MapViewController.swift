@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit
-import MessageInputBar
+//import MessageInputBar
 
 struct Stadium {
     var name: String
@@ -16,15 +16,17 @@ struct Stadium {
     var longitude: CLLocationDegrees
 }
 
-class MapViewController: ViewController, MessageInputBarDelegate {
+class MapViewController: ViewController {
     @IBOutlet weak var searchInput: UITextField!
     @IBOutlet weak var MapView: MKMapView!
     
-    let restaurant = true
+    //let restaurant = true
     let locationManager = CLLocationManager()
-    let searchBar = MessageInputBar()
-    var showsSearchBar = false
+    //let searchBar = MessageInputBar()
+    //var showsSearchBar = false
+    
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //checkLocationStatus()
@@ -35,9 +37,9 @@ class MapViewController: ViewController, MessageInputBarDelegate {
             print("Error with location")
         }
         
-        searchBar.inputTextView.placeholder = "Add a comment..."
-        searchBar.sendButton.title = "Search"
-        searchBar.delegate = self
+//        searchBar.inputTextView.placeholder = "Add a comment..."
+//        searchBar.sendButton.title = "Search"
+//        searchBar.delegate = self
         
         
      
@@ -48,16 +50,34 @@ class MapViewController: ViewController, MessageInputBarDelegate {
 //           becomeFirstResponder()
 //
 //       }
-    override var inputAccessoryView: UIView?{
-        return searchBar
-    }
-    override var canBecomeFirstResponder: Bool{
-        return showsSearchBar
-    }
+//    override var inputAccessoryView: UIView?{
+//        return searchBar
+//    }
+//    override var canBecomeFirstResponder: Bool{
+//        return showsSearchBar
+//    }
 //    func checkLocationStatus(){
 //
 //    }
     
+    @IBAction func onSearch(_ sender: Any) {
+         
+        let userSearch = searchInput.text as! String
+        CDYelpFusionKitManager.shared.apiClient.cancelAllPendingAPIRequests()
+//        if userSearch != nil {
+//            userSearch = searchInput.text!
+//        }
+        CDYelpFusionKitManager.shared.apiClient.searchBusinesses(byTerm: userSearch, location: "Los Angeles", latitude: nil, longitude: nil, radius: 10000, categories: nil, locale: .english_unitedStates, limit: 10, offset: 0, sortBy: .rating, priceTiers: [.oneDollarSign, .twoDollarSigns], openNow: nil, openAt: nil, attributes: nil) { (response) in
+            if let response = response,
+                let businesses = response.businesses,
+                businesses.count > 0 {
+                print(businesses.toJSON())
+                print(businesses)
+                }
+            
+            }
+        
+    }
     func checkLocationAuthorization(){
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:

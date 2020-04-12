@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://travel-app-cst495.herokuapp.com/parse"
             })
         )
+        
+        CDYelpFusionKitManager.shared.configure()
         return true
     }
 

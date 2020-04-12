@@ -18,6 +18,7 @@
 		14DAC64624170D5700A171BA /* TravelAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DAC64524170D5700A171BA /* TravelAppTests.swift */; };
 		14DAC65124170D5800A171BA /* TravelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DAC65024170D5800A171BA /* TravelAppUITests.swift */; };
 		244696B0244152B5005DBC59 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244696AF244152B5005DBC59 /* MapViewController.swift */; };
+		24AD64222442AECA003BE646 /* YelpAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AD64212442AECA003BE646 /* YelpAPICaller.swift */; };
 		C8CE23739F0FB5E6678E04C1 /* Pods_TravelApp_TravelAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 206109808612AF07FE7405C3 /* Pods_TravelApp_TravelAppUITests.framework */; };
 		CE94D82D468C00EA8AF2C91C /* Pods_TravelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A967936096D2D48BCCD9336 /* Pods_TravelApp.framework */; };
 		E10B8353C4FCC15161ED85E5 /* Pods_TravelAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11F4B5C285333445C68CAE44 /* Pods_TravelAppTests.framework */; };
@@ -60,6 +61,7 @@
 		14DAC65224170D5800A171BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		206109808612AF07FE7405C3 /* Pods_TravelApp_TravelAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelApp_TravelAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		244696AF244152B5005DBC59 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		24AD64212442AECA003BE646 /* YelpAPICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPICaller.swift; sourceTree = "<group>"; };
 		2E93A1EB81D657BA5041AF2D /* Pods-TravelApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelApp.release.xcconfig"; path = "Target Support Files/Pods-TravelApp/Pods-TravelApp.release.xcconfig"; sourceTree = "<group>"; };
 		3713DA6B9FEF7193AE8E6639 /* Pods-TravelAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelAppTests.release.xcconfig"; path = "Target Support Files/Pods-TravelAppTests/Pods-TravelAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		7A967936096D2D48BCCD9336 /* Pods_TravelApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +134,7 @@
 				145E8DBD242C15DD00FB5B37 /* LoginViewController.swift */,
 				145E8DBF242C16CD00FB5B37 /* HomeViewController.swift */,
 				244696AF244152B5005DBC59 /* MapViewController.swift */,
+				24AD64212442AECA003BE646 /* YelpAPICaller.swift */,
 			);
 			path = TravelApp;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				145E8DBE242C15DD00FB5B37 /* LoginViewController.swift in Sources */,
 				14DAC63324170D5100A171BA /* ViewController.swift in Sources */,
 				14DAC62F24170D5100A171BA /* AppDelegate.swift in Sources */,
+				24AD64222442AECA003BE646 /* YelpAPICaller.swift in Sources */,
 				14DAC63124170D5100A171BA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
