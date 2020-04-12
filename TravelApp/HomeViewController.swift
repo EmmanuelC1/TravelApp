@@ -24,7 +24,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as! HomeTableViewCell
         
-        let index = business[0]
+        let index = business[indexPath.row]
         let name = index["name"] as! String
         
         cell.restaurantNameLabel.text = name
