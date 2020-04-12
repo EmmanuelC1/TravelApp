@@ -2,10 +2,16 @@ PODS:
   - Alamofire (4.9.1)
   - AlamofireImage (3.6.0):
     - Alamofire (~> 4.9)
+  - AlamofireObjectMapper (5.2.0):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
   - Bolts/Tasks (1.9.0)
+  - CDYelpFusionKit (1.5.1):
+    - AlamofireObjectMapper (= 5.2.0)
   - MessageInputBar (0.4.1):
     - MessageInputBar/Core (= 0.4.1)
   - MessageInputBar/Core (0.4.1)
+  - ObjectMapper (3.5.2)
   - Parse (1.17.3):
     - Parse/Core (= 1.17.3)
   - Parse/Core (1.17.3):
@@ -13,6 +19,7 @@ PODS:
 
 DEPENDENCIES:
   - AlamofireImage (~> 3.5)
+  - CDYelpFusionKit
   - MessageInputBar
   - Parse
 
@@ -20,17 +27,23 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
+    - AlamofireObjectMapper
     - Bolts
+    - CDYelpFusionKit
     - MessageInputBar
+    - ObjectMapper
     - Parse
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
+  AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  CDYelpFusionKit: 94a7802fa23ef0eb78514c8a6f246f55b6bc91f0
   MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
+  ObjectMapper: b53ae947d370bf89423e86be7d4e2d2b2a8d3f40
   Parse: c1ad2a04d2cab2b54b6fb7da05f741abf2cf57d1
 
-PODFILE CHECKSUM: bab5e6773d794859a73b8f6c29e50f50c1c66f2b
+PODFILE CHECKSUM: d886b4a6ac212a5352b94ac1f426571fd749d04b
 
 COCOAPODS: 1.8.4

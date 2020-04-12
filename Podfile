@@ -9,6 +9,7 @@ target 'TravelApp' do
   pod 'Parse'
   pod 'AlamofireImage','~> 3.5'
   pod 'MessageInputBar'
+  pod 'CDYelpFusionKit'
 
   target 'TravelAppTests' do
     inherit! :search_paths

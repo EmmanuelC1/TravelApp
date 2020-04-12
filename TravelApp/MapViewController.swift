@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import MessageInputBar
 
-struct restaurants {
+struct Stadium {
     var name: String
     var latitude: CLLocationDegrees
     var longitude: CLLocationDegrees
@@ -18,9 +18,9 @@ struct restaurants {
 
 class MapViewController: ViewController, MessageInputBarDelegate {
     @IBOutlet weak var searchInput: UITextField!
-    
     @IBOutlet weak var MapView: MKMapView!
     
+    let restaurant = true
     let locationManager = CLLocationManager()
     let searchBar = MessageInputBar()
     var showsSearchBar = false
@@ -38,6 +38,9 @@ class MapViewController: ViewController, MessageInputBarDelegate {
         searchBar.inputTextView.placeholder = "Add a comment..."
         searchBar.sendButton.title = "Search"
         searchBar.delegate = self
+        
+        
+     
     }
 //    @objc func keyboardWillBeHidden(note: Notification){
 //           searchBar.inputTextView.text = nil
