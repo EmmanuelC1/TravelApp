@@ -19,6 +19,15 @@
 		14DAC65124170D5800A171BA /* TravelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DAC65024170D5800A171BA /* TravelAppUITests.swift */; };
 		4B6E6E560BD98491950F2FB1 /* Pods_TravelAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05CB6CFD3D1F18D7AE55AF1 /* Pods_TravelAppTests.framework */; };
 		4C2FF495A3C5AD0E9C24520B /* Pods_TravelApp_TravelAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE6CD90F434A1971C8C9A35 /* Pods_TravelApp_TravelAppUITests.framework */; };
+		F05F8FB52444E224002D9D49 /* YelpApINetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05F8FB42444E224002D9D49 /* YelpApINetworkServices.swift */; };
+		F0EB70A32443FC9400B82EE1 /*  Baseview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EB70A22443FC9400B82EE1 /*  Baseview.swift */; };
+		F0EB70AA2443FECD00B82EE1 /* DetailsRestaurantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EB70A92443FECD00B82EE1 /* DetailsRestaurantsView.swift */; };
+		F0EB70AC244406CD00B82EE1 /* DetailsRestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EB70AB244406CD00B82EE1 /* DetailsRestaurantsViewController.swift */; };
+		F0EB70AF244407DB00B82EE1 /* RestaurantTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EB70AE244407DB00B82EE1 /* RestaurantTableTableViewController.swift */; };
+		F0EB70B22444091100B82EE1 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EB70B12444091100B82EE1 /* RestaurantTableViewCell.swift */; };
+		F0EB70B624443BFE00B82EE1 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EB70B524443BFE00B82EE1 /* LocationView.swift */; };
+		F0EB70B824443D3200B82EE1 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EB70B724443D3200B82EE1 /* LocationViewController.swift */; };
+		F0EB70BB244454A300B82EE1 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EB70BA244454A300B82EE1 /* LocationServices.swift */; };
 		FCE6C0BAC7E24DE3879A74E7 /* Pods_TravelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 935BFB8301743EB3B84B01F8 /* Pods_TravelApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +74,16 @@
 		D38B7C8BEE389ADF4177C7AB /* Pods-TravelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelApp.debug.xcconfig"; path = "Target Support Files/Pods-TravelApp/Pods-TravelApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DCE6CD90F434A1971C8C9A35 /* Pods_TravelApp_TravelAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelApp_TravelAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC72209A78B4AA03E1CBD02F /* Pods-TravelAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TravelAppTests/Pods-TravelAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F05F8FB22444DDA8002D9D49 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F05F8FB42444E224002D9D49 /* YelpApINetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpApINetworkServices.swift; sourceTree = "<group>"; };
+		F0EB70A22443FC9400B82EE1 /*  Baseview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " Baseview.swift"; sourceTree = "<group>"; };
+		F0EB70A92443FECD00B82EE1 /* DetailsRestaurantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRestaurantsView.swift; sourceTree = "<group>"; };
+		F0EB70AB244406CD00B82EE1 /* DetailsRestaurantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRestaurantsViewController.swift; sourceTree = "<group>"; };
+		F0EB70AE244407DB00B82EE1 /* RestaurantTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableTableViewController.swift; sourceTree = "<group>"; };
+		F0EB70B12444091100B82EE1 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		F0EB70B524443BFE00B82EE1 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		F0EB70B724443D3200B82EE1 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		F0EB70BA244454A300B82EE1 /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +139,7 @@
 		14DAC62D24170D5100A171BA /* TravelApp */ = {
 			isa = PBXGroup;
 			children = (
+				F0EB70A12443FC5200B82EE1 /* restaurants */,
 				14DAC62E24170D5100A171BA /* AppDelegate.swift */,
 				14DAC63024170D5100A171BA /* SceneDelegate.swift */,
 				14DAC63224170D5100A171BA /* ViewController.swift */,
@@ -167,11 +187,84 @@
 		608847F8A378DAA0B1E453E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F05F8FB22444DDA8002D9D49 /* CoreLocation.framework */,
 				935BFB8301743EB3B84B01F8 /* Pods_TravelApp.framework */,
 				DCE6CD90F434A1971C8C9A35 /* Pods_TravelApp_TravelAppUITests.framework */,
 				A05CB6CFD3D1F18D7AE55AF1 /* Pods_TravelAppTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F05F8FB124448790002D9D49 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F0EB70BA244454A300B82EE1 /* LocationServices.swift */,
+				F05F8FB42444E224002D9D49 /* YelpApINetworkServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F0EB70A12443FC5200B82EE1 /* restaurants */ = {
+			isa = PBXGroup;
+			children = (
+				F05F8FB124448790002D9D49 /* Services */,
+				F0EB70B324443B2400B82EE1 /* LocationGPS */,
+				F0EB70AD2444077700B82EE1 /* List */,
+				F0EB70A52443FE3C00B82EE1 /* Details */,
+				F0EB70A22443FC9400B82EE1 /*  Baseview.swift */,
+			);
+			path = restaurants;
+			sourceTree = "<group>";
+		};
+		F0EB70A52443FE3C00B82EE1 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				F0EB70A62443FE4600B82EE1 /* Views */,
+				F0EB70AB244406CD00B82EE1 /* DetailsRestaurantsViewController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		F0EB70A62443FE4600B82EE1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F0EB70A92443FECD00B82EE1 /* DetailsRestaurantsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F0EB70AD2444077700B82EE1 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				F0EB70B02444082300B82EE1 /* Views */,
+				F0EB70AE244407DB00B82EE1 /* RestaurantTableTableViewController.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		F0EB70B02444082300B82EE1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F0EB70B12444091100B82EE1 /* RestaurantTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F0EB70B324443B2400B82EE1 /* LocationGPS */ = {
+			isa = PBXGroup;
+			children = (
+				F0EB70B424443B7600B82EE1 /* Views */,
+				F0EB70B724443D3200B82EE1 /* LocationViewController.swift */,
+			);
+			path = LocationGPS;
+			sourceTree = "<group>";
+		};
+		F0EB70B424443B7600B82EE1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F0EB70B524443BFE00B82EE1 /* LocationView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,11 +506,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0EB70B22444091100B82EE1 /* RestaurantTableViewCell.swift in Sources */,
 				145E8DC0242C16CD00FB5B37 /* HomeViewController.swift in Sources */,
 				145E8DBE242C15DD00FB5B37 /* LoginViewController.swift in Sources */,
+				F0EB70B824443D3200B82EE1 /* LocationViewController.swift in Sources */,
+				F0EB70AC244406CD00B82EE1 /* DetailsRestaurantsViewController.swift in Sources */,
+				F0EB70A32443FC9400B82EE1 /*  Baseview.swift in Sources */,
 				14DAC63324170D5100A171BA /* ViewController.swift in Sources */,
+				F0EB70BB244454A300B82EE1 /* LocationServices.swift in Sources */,
+				F0EB70B624443BFE00B82EE1 /* LocationView.swift in Sources */,
+				F0EB70AA2443FECD00B82EE1 /* DetailsRestaurantsView.swift in Sources */,
+				F0EB70AF244407DB00B82EE1 /* RestaurantTableTableViewController.swift in Sources */,
 				14DAC62F24170D5100A171BA /* AppDelegate.swift in Sources */,
 				14DAC63124170D5100A171BA /* SceneDelegate.swift in Sources */,
+				F05F8FB52444E224002D9D49 /* YelpApINetworkServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,12 +694,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9P2FA3GTFJ;
 				INFOPLIST_FILE = TravelApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = EmmanuelCastillo.TravelApp;
+				PRODUCT_BUNDLE_IDENTIFIER = athenaRaya.TravelApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -610,12 +713,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9P2FA3GTFJ;
 				INFOPLIST_FILE = TravelApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = EmmanuelCastillo.TravelApp;
+				PRODUCT_BUNDLE_IDENTIFIER = athenaRaya.TravelApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -629,6 +733,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9P2FA3GTFJ;
 				INFOPLIST_FILE = TravelAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -651,6 +756,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9P2FA3GTFJ;
 				INFOPLIST_FILE = TravelAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -672,6 +778,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9P2FA3GTFJ;
 				INFOPLIST_FILE = TravelAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -692,6 +799,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9P2FA3GTFJ;
 				INFOPLIST_FILE = TravelAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

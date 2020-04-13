@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import CoreLocation
 import Parse
+import Moya
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
+ let window = UIWindow()
+ // location service
+    let locationService = LocationService() // adding the location service
+    //reference to storyboard
+    let storybord = UIStoryboard(name: "Main", bundle: nil)
+    let service  = MoyaProvider<YelpService.BusinessesProvider>()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -23,6 +31,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://travel-app-cst495.herokuapp.com/parse"
             })
         )
+      //test
+        
+        service.request(.search(lat: 42.361145, long: -71.057083)) { (result) in
+            switch result{
+            case .success(let response):
+                print(try? JSONSerialization.jsonObject(with: response, options: []))
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
+        // setting the root
+        switch locationService.status { // when we dont have access to the user location we want to launch the new your location view.
+        case .notDetermined, .denied, .restricted:
+            let locationViewController = storybord.instantiateViewController(identifier: "LocationViewController") as? LocationViewController
+            
+            locationViewController?.locationService = locationService
+            window.rootViewController = locationViewController
+        default:
+            assertionFailure()
+        }
+        window.makeKeyAndVisible()
+        
         return true
     }
 
