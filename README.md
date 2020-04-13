@@ -30,15 +30,21 @@ Create an app for tourists who want to know about local food, movies, and physic
 
 - [x] User login
 - [x] Save user data(favorites)
-* Find user's current location using appropriate privacy settings
+- [ ] Find user's current location using appropriate privacy settings
 - [x] Home Screen with 3 tab buttons
-* Query DB for images to populate tabs
+- [ ] Query DB for images to populate tabs
 - [x] User must be able to select an item and see details (book button)
-* Give user ability to book event (mock-up)
+- [ ] Give user ability to book event (mock-up)
 
 **Optional Nice-to-have Stories**
 
 * Add pins on map to display favorites or searched items
+
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+<img src='http://g.recordit.co/IQVDwsq2sW.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 ### 2. Screen Archetypes
