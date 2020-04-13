@@ -28,12 +28,12 @@ Create an app for tourists who want to know about local food, movies, and physic
 
 **Required Must-have Stories**
 
-- [x] * User login
-* Save user data(favorites)
+- [x] User login
+- [x] Save user data(favorites)
 * Find user's current location using appropriate privacy settings
-* Home Screen with 4 tab buttons
+- [x] Home Screen with 3 tab buttons
 * Query DB for images to populate tabs
-* User must be able to select an item and see details (book button)
+- [x] User must be able to select an item and see details (book button)
 * Give user ability to book event (mock-up)
 
 **Optional Nice-to-have Stories**
