@@ -28,7 +28,7 @@ Create an app for tourists who want to know about local food, movies, and physic
 
 **Required Must-have Stories**
 
-* User login
+- [x] * User login
 * Save user data(favorites)
 * Find user's current location using appropriate privacy settings
 * Home Screen with 4 tab buttons
@@ -43,7 +43,7 @@ Create an app for tourists who want to know about local food, movies, and physic
 
 ### 2. Screen Archetypes
 
-* Login page - [x]
+* Login page
    * User enters login valid information
 * Home page
    * Displays categories: "Movies", "Food"
