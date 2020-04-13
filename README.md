@@ -44,7 +44,7 @@ Create an app for tourists who want to know about local food, movies, and physic
 ### 2. Screen Archetypes
 
 * Login page
-   * User enters login valid information
+   * User enters login valid information[x]
 * Home page
    * Displays categories: "Movies", "Food"
    * Tabs in tabbar: "Home", "Search", "Favorites"
