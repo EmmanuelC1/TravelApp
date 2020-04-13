@@ -60,5 +60,15 @@ class DetailsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        //Pass the selected movie to the details view controller
+        let bookingsViewController = segue.destination as! BookingViewController
+        bookingsViewController.choice = choice
+        
+    }
 
 }

@@ -10,11 +10,17 @@ import UIKit
 import AlamofireImage
 
 class BookingViewController: UIViewController {
-
+    @IBOutlet weak var businessName: UILabel!
+    
+    
+    var choice: [String:Any]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        businessName.text = choice["name"] as? String
+        businessName.sizeToFit()
     }
     
 
