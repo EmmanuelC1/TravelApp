@@ -29,7 +29,7 @@ Create an app for tourists who want to know about local food, movies, and physic
 **Required Must-have Stories**
 
 - [x] User login
-- [x] Save user data(favorites)
+- [ ] Save user data(favorites)
 - [ ] Find user's current location using appropriate privacy settings
 - [x] Home Screen with 3 tab buttons
 - [ ] Query DB for images to populate tabs
@@ -44,7 +44,7 @@ Create an app for tourists who want to know about local food, movies, and physic
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://g.recordit.co/IQVDwsq2sW.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/i1TWfiOD8j.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 ### 2. Screen Archetypes
