@@ -18,7 +18,7 @@ PODS:
     - Bolts/Tasks (~> 1.9)
 
 DEPENDENCIES:
-  - AlamofireImage (~> 3.5)
+  - AlamofireImage
   - CDYelpFusionKit
   - MessageInputBar
   - Parse
@@ -44,6 +44,6 @@ SPEC CHECKSUMS:
   ObjectMapper: b53ae947d370bf89423e86be7d4e2d2b2a8d3f40
   Parse: c1ad2a04d2cab2b54b6fb7da05f741abf2cf57d1
 
-PODFILE CHECKSUM: d886b4a6ac212a5352b94ac1f426571fd749d04b
+PODFILE CHECKSUM: bac0af32c2cab1825538accc82f95e7979fba7d3
 
 COCOAPODS: 1.8.4

@@ -9,19 +9,20 @@
 import UIKit
 import MapKit
 //import MessageInputBar
+import CoreLocation
 
-struct Stadium {
-    var name: String
-    var latitude: CLLocationDegrees
-    var longitude: CLLocationDegrees
-}
+//struct Stadium {
+//    var name: String
+//    var latitude: CLLocationDegrees
+//    var longitude: CLLocationDegrees
+//}
 
-class MapViewController: ViewController {
+class MapViewController: ViewController, CLLocationManagerDelegate {
     @IBOutlet weak var searchInput: UITextField!
     @IBOutlet weak var MapView: MKMapView!
     
     //let restaurant = true
-    let locationManager = CLLocationManager()
+    var locationManager:CLLocationManager!
     //let searchBar = MessageInputBar()
     //var showsSearchBar = false
     
@@ -31,8 +32,14 @@ class MapViewController: ViewController {
         super.viewDidLoad()
         //checkLocationStatus()
         // Do any additional setup after loading the view.
+        locationManager = CLLocationManager()
         if CLLocationManager.locationServicesEnabled() {
             checkLocationAuthorization()
+            
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.stopUpdatingLocation()
+
         } else {
             print("Error with location")
         }
@@ -63,6 +70,7 @@ class MapViewController: ViewController {
     @IBAction func onSearch(_ sender: Any) {
          
         let userSearch = searchInput.text as! String
+        //let userLat = MapView.userLocation.location?.coordinate.latitude
         CDYelpFusionKitManager.shared.apiClient.cancelAllPendingAPIRequests()
 //        if userSearch != nil {
 //            userSearch = searchInput.text!
@@ -73,6 +81,7 @@ class MapViewController: ViewController {
                 businesses.count > 0 {
                 print(businesses.toJSON())
                 print(businesses)
+                
                 }
             
             }
@@ -82,6 +91,7 @@ class MapViewController: ViewController {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
           MapView.showsUserLocation = true
+           
          case .denied: // Show alert telling users how to turn on permissions
          break
         case .notDetermined:
@@ -93,6 +103,7 @@ class MapViewController: ViewController {
          break
         }
     }
+    
 
     /*
     // MARK: - Navigation
@@ -103,5 +114,11 @@ class MapViewController: ViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation: CLLocation = locations[0] as CLLocation
+        
+        print("user latitude = \(userLocation.coordinate.latitude)")
+        print("user longitude = \(userLocation.coordinate.longitude)")
+    }
+    
 }

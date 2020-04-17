@@ -7,7 +7,7 @@ target 'TravelApp' do
   #use_modular_headers!
   # Pods for TravelApp
   pod 'Parse'
-  pod 'AlamofireImage','~> 3.5'
+  pod 'AlamofireImage'
   pod 'MessageInputBar'
   pod 'CDYelpFusionKit'
 
