@@ -1,8 +1,8 @@
 //
-//  HomeViewController.swift
+//  ListViewController.swift
 //  TravelApp
 //
-//  Created by Howard Aguilar on 4/11/20.
+//  Created by Howard Aguilar on 4/16/20.
 //  Copyright © 2020 Emmanuel Castillo. All rights reserved.
 //
 
@@ -11,24 +11,26 @@ import Parse
 import CDYelpFusionKit
 import MapKit
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let choices = ["Restaurants", "Theaters", "Museums"]
-    var counter = 0
-    
+    var word:String = ""
+    var business = [[String:Any]]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return choices.count
+        return business.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as! HomeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell") as! ListTableViewCell
         
-        cell.categories1NameLabel.text = choices[counter]
-        counter += 1
+        let choice = business[indexPath.row]
+        let name = choice["name"] as! String
+        
+        cell.listNameLabel.text = name
+        
         
         return cell
     }
@@ -40,6 +42,21 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
+        CDYelpFusionKitManager.shared.apiClient.cancelAllPendingAPIRequests()
+        CDYelpFusionKitManager.shared.apiClient.searchBusinesses(byTerm: word, location: "San Francisco", latitude: nil, longitude: nil, radius: 10000, categories: nil, locale: .english_unitedStates, limit: 10, offset: 0, sortBy: .rating, priceTiers: [.oneDollarSign, .twoDollarSigns], openNow: nil, openAt: nil, attributes: nil) { (response) in
+            
+            if let response = response,
+                let businesses = response.businesses,
+                businesses.count > 0 {
+                //print(businesses)
+                //print(businesses.toJSON())
+                    
+                self.business = businesses.toJSON()
+                //print(self.business)
+                self.tableView.reloadData()
+                
+            }
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -62,11 +79,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         //Find the selected movie
         let cell = sender as! UITableViewCell
         let indexPath = tableView.indexPath(for: cell)!
-        let word = choices[indexPath.row]
+        let choice = business[indexPath.row]
         
         //Pass the selected movie to the details view controller
-        let ListViewController = segue.destination as! ListViewController
-        ListViewController.word = word
+        let detailsViewController = segue.destination as! DetailsViewController
+        detailsViewController.choice = choice
         
         tableView.deselectRow(at: indexPath, animated: true)
         
