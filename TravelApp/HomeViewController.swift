@@ -24,8 +24,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as! HomeTableViewCell
         
-        let index = business[indexPath.row]
-        let name = index["name"] as! String
+        let choice = business[indexPath.row]
+        let name = choice["name"] as! String
         
         cell.restaurantNameLabel.text = name
         
@@ -41,7 +41,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         
         CDYelpFusionKitManager.shared.apiClient.cancelAllPendingAPIRequests()
-        CDYelpFusionKitManager.shared.apiClient.searchBusinesses(byTerm: "Food", location: "San Francisco", latitude: nil, longitude: nil, radius: 10000, categories: [.activeLife, .food], locale: .english_unitedStates, limit: 10, offset: 0, sortBy: .rating, priceTiers: [.oneDollarSign, .twoDollarSigns], openNow: nil, openAt: nil, attributes: nil) { (response) in
+        CDYelpFusionKitManager.shared.apiClient.searchBusinesses(byTerm: "Food", location: "San Francisco", latitude: nil, longitude: nil, radius: 10000, categories: [.restaurants], locale: .english_unitedStates, limit: 10, offset: 0, sortBy: .rating, priceTiers: [.oneDollarSign, .twoDollarSigns], openNow: nil, openAt: nil, attributes: nil) { (response) in
             
             if let response = response,
                 let businesses = response.businesses,
@@ -50,7 +50,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 //print(businesses.toJSON())
                     
                 self.business = businesses.toJSON()
-                print(self.business)
+                //print(self.business)
                 self.tableView.reloadData()
                 
             }
@@ -80,5 +80,22 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        //Find the selected movie
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        let choice = business[indexPath.row]
+        
+        //Pass the selected movie to the details view controller
+        let detailsViewController = segue.destination as! DetailsViewController
+        detailsViewController.choice = choice
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
 
 }

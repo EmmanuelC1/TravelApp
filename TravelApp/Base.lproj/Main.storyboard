@@ -134,62 +134,79 @@
         <!--Details-->
         <scene sceneID="v14-J5-ChX">
             <objects>
-                <viewController title="Details" id="3mU-Ha-99B" sceneMemberID="viewController">
+                <viewController title="Details" id="3mU-Ha-99B" customClass="DetailsViewController" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jFz-ZU-lLD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name of the Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuB-Oo-SMh">
-                                <rect key="frame" x="133" y="76" width="148" height="21"/>
+                                <rect key="frame" x="87" y="141" width="240" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D27-Gq-BbM">
-                                <rect key="frame" x="48" y="292" width="72" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D27-Gq-BbM">
+                                <rect key="frame" x="135" y="435" width="259" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crE-3Y-cfC">
-                                <rect key="frame" x="48" y="321" width="49" height="21"/>
+                                <rect key="frame" x="135" y="487" width="259" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELU-Ph-0Pz">
-                                <rect key="frame" x="48" y="350" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELU-Ph-0Pz">
+                                <rect key="frame" x="48" y="487" width="54" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xl7-cD-YGG">
+                                <rect key="frame" x="87" y="170" width="240" height="234"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1y-PV-bSh">
+                                <rect key="frame" x="48" y="435" width="68" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOA-ml-O80">
-                                <rect key="frame" x="172" y="438" width="70" height="30"/>
+                                <rect key="frame" x="172" y="602" width="70" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Book Now"/>
+                                <connections>
+                                    <segue destination="hQV-NG-4iW" kind="show" id="jGs-MM-z4A"/>
+                                </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xl7-cD-YGG">
-                                <rect key="frame" x="87" y="105" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="kYi-Co-3fg"/>
                     </view>
                     <navigationItem key="navigationItem" id="1i0-Rd-WjO"/>
+                    <connections>
+                        <outlet property="bookButton" destination="OOA-ml-O80" id="uZe-kx-5qI"/>
+                        <outlet property="businessAddress" destination="D27-Gq-BbM" id="v5X-Dr-G7g"/>
+                        <outlet property="businessImage" destination="Xl7-cD-YGG" id="scr-JZ-7qH"/>
+                        <outlet property="businessName" destination="SuB-Oo-SMh" id="VTa-05-wkb"/>
+                        <outlet property="businessPhone" destination="crE-3Y-cfC" id="cEr-kT-Euw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRz-Z3-QT1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="42" y="2609"/>
+            <point key="canvasLocation" x="40.579710144927539" y="2409.7826086956525"/>
         </scene>
-        <!--View Controller-->
+        <!--Booking View Controller-->
         <scene sceneID="gq3-LB-23p">
             <objects>
-                <viewController id="hQV-NG-4iW" sceneMemberID="viewController">
+                <viewController id="hQV-NG-4iW" customClass="BookingViewController" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O4G-At-cI9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -239,10 +256,13 @@
                         <viewLayoutGuide key="safeArea" id="sdN-Fv-lZ9"/>
                     </view>
                     <navigationItem key="navigationItem" id="5ES-a5-dWu"/>
+                    <connections>
+                        <outlet property="businessName" destination="cwO-ig-PLY" id="dgn-8g-XdA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Hr-Iu-dSZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="42" y="3470"/>
+            <point key="canvasLocation" x="42" y="3147"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="9cl-7A-nh7">
@@ -371,6 +391,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="restaurantNameLabel" destination="6G3-hw-SmE" id="pN9-O0-bmI"/>
+                                            <segue destination="3mU-Ha-99B" kind="show" id="Dnf-lh-Iwk"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -412,42 +433,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jFQ-t0-d6X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="43" y="151"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="0O0-Pu-RQ0">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y3e-Ig-Wmw" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m8F-x4-0R4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="3mU-Ha-99B" kind="relationship" relationship="rootViewController" id="Lm3-nY-Pyz"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zVJ-0Z-FBH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-794" y="2609"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Qdl-zu-6pp">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ewk-Ua-L0v" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a7r-al-hQo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="hQV-NG-4iW" kind="relationship" relationship="rootViewController" id="OeI-YZ-Cx3"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xQH-ud-lh4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-794" y="3470"/>
         </scene>
         <!--Home-->
         <scene sceneID="i3P-Dx-9Ir">
