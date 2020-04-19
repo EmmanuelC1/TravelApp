@@ -25,6 +25,7 @@ class MapViewController: ViewController, CLLocationManagerDelegate {
     var locationManager:CLLocationManager!
     var lat: Double!
     var long: Double!
+    var businesses = [[String:Any]]()
     //let searchBar = MessageInputBar()
     //var showsSearchBar = false
     
@@ -43,7 +44,7 @@ class MapViewController: ViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
             locationManager.requestWhenInUseAuthorization()
             MapView.showsUserLocation = true
-
+            
         } else {
             print("Error with location")
         }
@@ -76,8 +77,8 @@ class MapViewController: ViewController, CLLocationManagerDelegate {
            guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
            
            print("locations = \(locValue.latitude) \(locValue.longitude)")
-        lat  = locValue.latitude
-        long = locValue.longitude
+            lat  = locValue.latitude
+            long = locValue.longitude
            animateMap(userLocation)
        }
        
@@ -100,12 +101,31 @@ class MapViewController: ViewController, CLLocationManagerDelegate {
             if let response = response,
                 let businesses = response.businesses,
                 businesses.count > 0 {
-                print(businesses.toJSON())
-                print(businesses)
+                self.businesses = businesses.toJSON()
+                print(self.businesses)
+                
+                self.createMarker(businesses: self.businesses)
                 
                 }
             
             }
+        
+    }
+    
+    func createMarker(businesses: [[String : Any]]){
+        for business in businesses{
+            let annotations = MKPointAnnotation()
+            annotations.title = business["name"] as? String
+            
+            guard let coordinate = business["coordinates"] as? [String:Any] else {return}
+            guard let latitude = coordinate["latitude"] as? Double else {return}
+            guard let longitude = coordinate["longitude"] as? Double else {return}
+            annotations.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            //print("Latitude",(business["coordinates"] as! [String:Any])["latitude"]!)
+            //print("Longitude",(business["coordinates"] as! [String:Any])["longitude"]!)
+            
+            MapView.addAnnotation(annotations)
+        }
         
     }
 //    func checkLocationAuthorization(){
