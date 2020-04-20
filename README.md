@@ -44,7 +44,7 @@ Create an app for tourists who want to know about local food, movies, and physic
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://g.recordit.co/i1TWfiOD8j.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/fpHhqkOWxx.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 ### 2. Screen Archetypes
