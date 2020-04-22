@@ -16,6 +16,8 @@
 		14DAC63B24170D5700A171BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14DAC63924170D5700A171BA /* LaunchScreen.storyboard */; };
 		14DAC64624170D5700A171BA /* TravelAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DAC64524170D5700A171BA /* TravelAppTests.swift */; };
 		14DAC65124170D5800A171BA /* TravelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DAC65024170D5800A171BA /* TravelAppUITests.swift */; };
+		14E946D1244FA129003F7AB4 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E946D0244FA129003F7AB4 /* FavoritesViewController.swift */; };
+		14E946D3244FA359003F7AB4 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E946D2244FA359003F7AB4 /* FavoritesCell.swift */; };
 		244696B0244152B5005DBC59 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244696AF244152B5005DBC59 /* MapViewController.swift */; };
 		4B6E6E560BD98491950F2FB1 /* Pods_TravelAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05CB6CFD3D1F18D7AE55AF1 /* Pods_TravelAppTests.framework */; };
 		4C2FF495A3C5AD0E9C24520B /* Pods_TravelApp_TravelAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE6CD90F434A1971C8C9A35 /* Pods_TravelApp_TravelAppUITests.framework */; };
@@ -73,6 +75,8 @@
 		14DAC64C24170D5800A171BA /* TravelAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14DAC65024170D5800A171BA /* TravelAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelAppUITests.swift; sourceTree = "<group>"; };
 		14DAC65224170D5800A171BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14E946D0244FA129003F7AB4 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		14E946D2244FA359003F7AB4 /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
 		244696AF244152B5005DBC59 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		2E93A1EB81D657BA5041AF2D /* Pods-TravelApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelApp.release.xcconfig"; path = "Target Support Files/Pods-TravelApp/Pods-TravelApp.release.xcconfig"; sourceTree = "<group>"; };
 		3713DA6B9FEF7193AE8E6639 /* Pods-TravelAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelAppTests.release.xcconfig"; path = "Target Support Files/Pods-TravelAppTests/Pods-TravelAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,13 +155,14 @@
 				14DAC63724170D5700A171BA /* Assets.xcassets */,
 				14DAC63C24170D5700A171BA /* Info.plist */,
 				145E8DBD242C15DD00FB5B37 /* LoginViewController.swift */,
-				145E8DBF242C16CD00FB5B37 /* HomeViewController.swift */,
 				244696AF244152B5005DBC59 /* MapViewController.swift */,
 				91B576DC244141C300007038 /* YelpAPICaller.swift */,
 				91B576DE2441651700007038 /* HomeTableViewCell.swift */,
 				91B576E22441C56F00007038 /* HomeViewController.swift */,
 				91B576E42442C5B700007038 /* DetailsViewController.swift */,
 				91B576E624432EF000007038 /* BookingViewController.swift */,
+				14E946D0244FA129003F7AB4 /* FavoritesViewController.swift */,
+				14E946D2244FA359003F7AB4 /* FavoritesCell.swift */,
 			);
 			path = TravelApp;
 			sourceTree = "<group>";
@@ -447,13 +452,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				145E8DC0242C16CD00FB5B37 /* HomeViewController.swift in Sources */,
 				244696B0244152B5005DBC59 /* MapViewController.swift in Sources */,
 				145E8DBE242C15DD00FB5B37 /* LoginViewController.swift in Sources */,
 				91B576E724432EF000007038 /* BookingViewController.swift in Sources */,
 				91B576DF2441651700007038 /* HomeTableViewCell.swift in Sources */,
 				14DAC63324170D5100A171BA /* ViewController.swift in Sources */,
+				14E946D3244FA359003F7AB4 /* FavoritesCell.swift in Sources */,
 				91B576E52442C5B700007038 /* DetailsViewController.swift in Sources */,
+				14E946D1244FA129003F7AB4 /* FavoritesViewController.swift in Sources */,
 				14DAC62F24170D5100A171BA /* AppDelegate.swift in Sources */,
 				14DAC63124170D5100A171BA /* SceneDelegate.swift in Sources */,
 				91B576E32441C56F00007038 /* HomeViewController.swift in Sources */,
