@@ -18,7 +18,7 @@ import CDYelpFusionKit
 //    var longitude: CLLocationDegrees
 //}
 
-class MapViewController: ViewController, CLLocationManagerDelegate {
+class MapViewController: ViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     @IBOutlet weak var searchInput: UITextField!
     @IBOutlet weak var MapView: MKMapView!
     
@@ -44,6 +44,7 @@ class MapViewController: ViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
             locationManager.requestWhenInUseAuthorization()
             MapView.showsUserLocation = true
+            MapView.delegate = self
             
         } else {
             print("Error with location")
@@ -71,6 +72,7 @@ class MapViewController: ViewController, CLLocationManagerDelegate {
 //    func checkLocationStatus(){
 //
 //    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
            let userLocation: CLLocation = locations[0] as CLLocation
            
@@ -86,7 +88,9 @@ class MapViewController: ViewController, CLLocationManagerDelegate {
            let region = MKCoordinateRegion.init(center: location.coordinate,latitudinalMeters: 1000,longitudinalMeters: 1000)
            MapView.setRegion(region, animated: true)
        }
-    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        
+    }
     @IBAction func onSearch(_ sender: Any) {
          
         let userSearch = searchInput.text as! String
@@ -97,12 +101,12 @@ class MapViewController: ViewController, CLLocationManagerDelegate {
 //        if userSearch != nil {
 //            userSearch = searchInput.text!
 //        }
-        CDYelpFusionKitManager.shared.apiClient?.searchBusinesses(byTerm: userSearch, location: nil, latitude: lat, longitude: long, radius: 10000, categories: nil, locale: .english_unitedStates, limit: 10, offset: 0, sortBy: .rating, priceTiers: [.oneDollarSign, .twoDollarSigns],openNow: nil, openAt: nil, attributes: nil) { (response) in
+        CDYelpFusionKitManager.shared.apiClient?.searchBusinesses(byTerm: userSearch, location: nil, latitude: lat, longitude: long, radius: 10000, categories: nil, locale: .english_unitedStates, limit: 1, offset: 0, sortBy: .rating, priceTiers: [.oneDollarSign, .twoDollarSigns],openNow: nil, openAt: nil, attributes: nil) { (response) in
             if let response = response,
                 let businesses = response.businesses,
                 businesses.count > 0 {
                 self.businesses = businesses.toJSON()
-                print(self.businesses)
+                //print(self.businesses)
                 
                 self.createMarker(businesses: self.businesses)
                 
@@ -116,17 +120,21 @@ class MapViewController: ViewController, CLLocationManagerDelegate {
         for business in businesses{
             let annotations = MKPointAnnotation()
             annotations.title = business["name"] as? String
-            
+            //let id = business["id"] as? Double
             guard let coordinate = business["coordinates"] as? [String:Any] else {return}
             guard let latitude = coordinate["latitude"] as? Double else {return}
             guard let longitude = coordinate["longitude"] as? Double else {return}
             annotations.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            //print("Latitude",(business["coordinates"] as! [String:Any])["latitude"]!)
-            //print("Longitude",(business["coordinates"] as! [String:Any])["longitude"]!)
-            
+      
+            //removeMarker(annotations: annotations)
+            //MapView.removeAnnotation(annotations)
             MapView.addAnnotation(annotations)
+            //print(id)
+            
         }
-        
+    }
+    func removeMarker(annotations: MKPointAnnotation){
+        MapView.removeAnnotation(annotations)
     }
 //    func checkLocationAuthorization(){
 //        switch CLLocationManager.authorizationStatus() {
@@ -155,5 +163,25 @@ class MapViewController: ViewController, CLLocationManagerDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        //let
+        
+        let business = businesses.filter { (business) -> Bool in
+           // print(business)
+            //print(view.annotation?.coordinate.latitude)
+            //print(view.annotation?.coordinate.longitude)
+            
+            if let coordinates = business["coordinates"] as? [String:Any],
+                let latitude = coordinates["latitude"] as? Double,
+                
+                let longitude = coordinates["longitude"] as? Double {
+                let coordinate = view.annotation?.coordinate
+                return coordinate?.latitude == latitude && coordinate?.longitude == longitude
+                
+            }
+            return false
+        }
+        print(business)
+    }
    
 }
