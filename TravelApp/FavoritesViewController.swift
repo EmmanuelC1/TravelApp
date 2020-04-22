@@ -31,7 +31,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     func getObjectIds() {
         let query = PFQuery(className: "Favorites")
         let currentUser = PFUser.current()
-        query.whereKey("user", equalTo: currentUser)
+        query.whereKey("user", equalTo: currentUser!)
         query.findObjectsInBackground { (objects: [PFObject]?,error: Error?) in
             if let error = error {
                 //Log details of the failure
