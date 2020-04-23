@@ -393,7 +393,7 @@
         <scene sceneID="i3P-Dx-9Ir">
             <objects>
                 <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="eeg-js-sBM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="hcf-uN-Y6q"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="hcf-uN-Y6q"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h0m-XE-hKG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -412,7 +412,7 @@
         <scene sceneID="UxT-El-ZT6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fDT-qJ-TRA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" id="WQV-gq-wlZ"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="WQV-gq-wlZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dqg-ii-W5K">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -431,7 +431,7 @@
         <scene sceneID="5ey-LM-5eB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2BZ-JX-EYe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" id="5Hm-xp-sNt"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart" catalog="system" id="5Hm-xp-sNt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NhU-oK-Hws">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -448,7 +448,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="heart" catalog="system" width="64" height="54"/>
+        <image name="house" catalog="system" width="64" height="54"/>
         <image name="ios-marketing" width="2048" height="2048"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="hX9-DR-iRV"/>
