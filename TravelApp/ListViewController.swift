@@ -52,7 +52,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 //print(businesses.toJSON())
                     
                 self.business = businesses.toJSON()
-                //print(self.business)
+                print(self.business)
                 self.tableView.reloadData()
                 
             }
