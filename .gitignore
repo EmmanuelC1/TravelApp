@@ -1,0 +1,10 @@
+.DS_Store
+*.swp
+*.lock
+Pods/Pods.xcodeproj/xcuserdata/howardaguilar.xcuserdatad/
+TravelApp.xcodeproj/xcuserdata/howardaguilar.xcuserdatad/
+TravelApp.xcworkspace/xcuserdata/
+*.xcconfig
+Pods/Pods.xcodeproj/xcuserdata/emmanuel.xcuserdatad/xcschemes/xcschememanagement.plist
+TravelApp.xcodeproj/xcuserdata/
+TravelApp.xcworkspace/xcuserdata/
