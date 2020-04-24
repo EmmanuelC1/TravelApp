@@ -78,10 +78,11 @@ class MapViewController: ViewController, CLLocationManagerDelegate, MKMapViewDel
            
            guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
            
-           print("locations = \(locValue.latitude) \(locValue.longitude)")
+           //print("locations = \(locValue.latitude) \(locValue.longitude)")
             lat  = locValue.latitude
             long = locValue.longitude
            animateMap(userLocation)
+            print("locations = \(locValue.latitude) \(locValue.longitude)")
        }
        
        func animateMap(_ location: CLLocation){
@@ -101,7 +102,7 @@ class MapViewController: ViewController, CLLocationManagerDelegate, MKMapViewDel
 //        if userSearch != nil {
 //            userSearch = searchInput.text!
 //        }
-        CDYelpFusionKitManager.shared.apiClient?.searchBusinesses(byTerm: userSearch, location: nil, latitude: lat, longitude: long, radius: 10000, categories: nil, locale: .english_unitedStates, limit: 1, offset: 0, sortBy: .rating, priceTiers: [.oneDollarSign, .twoDollarSigns],openNow: nil, openAt: nil, attributes: nil) { (response) in
+        CDYelpFusionKitManager.shared.apiClient?.searchBusinesses(byTerm: userSearch, location: nil, latitude: lat, longitude: long, radius: 10000, categories: nil, locale: .english_unitedStates, limit: 10, offset: 0, sortBy: .rating, priceTiers: [.oneDollarSign, .twoDollarSigns],openNow: nil, openAt: nil, attributes: nil) { (response) in
             if let response = response,
                 let businesses = response.businesses,
                 businesses.count > 0 {
@@ -181,7 +182,10 @@ class MapViewController: ViewController, CLLocationManagerDelegate, MKMapViewDel
             }
             return false
         }
+        //print()
         print(business)
+        print(view.annotation?.coordinate.latitude)
+        print(view.annotation?.coordinate.longitude)
     }
    
 }
