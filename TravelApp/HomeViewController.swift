@@ -44,7 +44,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view.
     }
     
-
+    //MARK: onLogoutButton
+    // Log user out when user clicks on Logout button
+    @IBAction func onLogout(_ sender: Any) {
+            PFUser.logOut()
+            
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+            
+            let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+            sceneDelegate.window?.rootViewController = loginViewController
+    }
+    
     /*
     // MARK: - Navigation
 
