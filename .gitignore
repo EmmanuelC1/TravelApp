@@ -4,4 +4,5 @@
 Pods/Pods.xcodeproj/xcuserdata/howardaguilar.xcuserdatad/
 TravelApp.xcodeproj/xcuserdata/howardaguilar.xcuserdatad/
 TravelApp.xcworkspace/xcuserdata/
-*.xcconfig
+Pods/Target Support Files/Pods-TravelAppTests/Pods-TravelAppTests.debug.xcconfig
+Pods/Target Support Files/Pods-TravelAppTests/Pods-TravelAppTests.release.xcconfig
