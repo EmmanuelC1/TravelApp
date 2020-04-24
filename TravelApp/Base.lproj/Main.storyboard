@@ -102,15 +102,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qtU-kj-ZKS">
-                                <rect key="frame" x="33" y="586" width="344" height="34"/>
+                                <rect key="frame" x="35" y="538" width="344" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
                             </textField>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="L5j-Ry-Ena">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="438"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJx-98-Ejs">
+                                <rect key="frame" x="164" y="594" width="87" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="onSearch:" destination="r3D-E3-KqC" eventType="touchUpInside" id="WJk-p4-jo0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="4YZ-D7-GYh"/>
@@ -120,11 +128,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="MapView" destination="L5j-Ry-Ena" id="A7J-KI-HZU"/>
+                        <outlet property="searchInput" destination="qtU-kj-ZKS" id="bJS-Ue-iW9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bk1-qM-LmQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="42" y="1687"/>
+            <point key="canvasLocation" x="40.579710144927539" y="1686.6847826086957"/>
         </scene>
         <!--Details-->
         <scene sceneID="v14-J5-ChX">
@@ -506,6 +515,6 @@
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hX9-DR-iRV"/>
+        <segue reference="Dnf-lh-Iwk"/>
     </inferredMetricsTieBreakers>
 </document>
