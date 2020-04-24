@@ -9,26 +9,26 @@
 import UIKit
 import Parse
 import CDYelpFusionKit
+import MapKit
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var business = [[String:Any]]()
+    let choices = ["Restaurants", "Theaters", "Museums"]
+    var counter = 0
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return business.count
+        return choices.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as! HomeTableViewCell
         
-        let choice = business[indexPath.row]
-        let name = choice["name"] as! String
-        
-        cell.restaurantNameLabel.text = name
-        
+        cell.categories1NameLabel.text = choices[counter]
+        counter += 1
         
         return cell
     }
@@ -40,21 +40,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
-        CDYelpFusionKitManager.shared.apiClient.cancelAllPendingAPIRequests()
-        CDYelpFusionKitManager.shared.apiClient.searchBusinesses(byTerm: "Food", location: "San Francisco", latitude: nil, longitude: nil, radius: 10000, categories: [.restaurants], locale: .english_unitedStates, limit: 10, offset: 0, sortBy: .rating, priceTiers: [.oneDollarSign, .twoDollarSigns], openNow: nil, openAt: nil, attributes: nil) { (response) in
-            
-            if let response = response,
-                let businesses = response.businesses,
-                businesses.count > 0 {
-                //print(businesses)
-                //print(businesses.toJSON())
-                    
-                self.business = businesses.toJSON()
-                //print(self.business)
-                self.tableView.reloadData()
-                
-            }
-        }
 
         // Do any additional setup after loading the view.
     }
@@ -88,11 +73,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         //Find the selected movie
         let cell = sender as! UITableViewCell
         let indexPath = tableView.indexPath(for: cell)!
-        let choice = business[indexPath.row]
+        let word = choices[indexPath.row]
         
         //Pass the selected movie to the details view controller
-        let detailsViewController = segue.destination as! DetailsViewController
-        detailsViewController.choice = choice
+        let ListViewController = segue.destination as! ListViewController
+        ListViewController.word = word
         
         tableView.deselectRow(at: indexPath, animated: true)
         

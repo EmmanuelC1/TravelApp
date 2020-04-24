@@ -23,6 +23,8 @@ class DetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // EXTRA CODE HERE TO SEARCH BY BUSINESS ID, replace previous dictionary pass in
 
         // Do any additional setup after loading the view.
         businessName.text = choice["name"] as? String

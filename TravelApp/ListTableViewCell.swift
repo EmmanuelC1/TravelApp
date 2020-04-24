@@ -1,16 +1,16 @@
 //
-//  HomeTableViewCell.swift
+//  ListTableViewCell.swift
 //  TravelApp
 //
-//  Created by Howard Aguilar on 4/10/20.
+//  Created by Howard Aguilar on 4/16/20.
 //  Copyright © 2020 Emmanuel Castillo. All rights reserved.
 //
 
 import UIKit
 
-class HomeTableViewCell: UITableViewCell {
+class ListTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var categories1NameLabel: UILabel!
+    @IBOutlet weak var listNameLabel: UILabel!
     
     
     override func awakeFromNib() {

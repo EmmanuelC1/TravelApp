@@ -21,6 +21,8 @@
 		244696B0244152B5005DBC59 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244696AF244152B5005DBC59 /* MapViewController.swift */; };
 		4B6E6E560BD98491950F2FB1 /* Pods_TravelAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05CB6CFD3D1F18D7AE55AF1 /* Pods_TravelAppTests.framework */; };
 		4C2FF495A3C5AD0E9C24520B /* Pods_TravelApp_TravelAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE6CD90F434A1971C8C9A35 /* Pods_TravelApp_TravelAppUITests.framework */; };
+		910696B224498A7C00E32192 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910696B124498A7C00E32192 /* ListTableViewCell.swift */; };
+		910696B424498A9100E32192 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910696B324498A9100E32192 /* ListViewController.swift */; };
 		91B576DD244141C300007038 /* YelpAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B576DC244141C300007038 /* YelpAPICaller.swift */; };
 		91B576DF2441651700007038 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B576DE2441651700007038 /* HomeTableViewCell.swift */; };
 		91B576E32441C56F00007038 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B576E22441C56F00007038 /* HomeViewController.swift */; };
@@ -81,6 +83,8 @@
 		2E93A1EB81D657BA5041AF2D /* Pods-TravelApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelApp.release.xcconfig"; path = "Target Support Files/Pods-TravelApp/Pods-TravelApp.release.xcconfig"; sourceTree = "<group>"; };
 		3713DA6B9FEF7193AE8E6639 /* Pods-TravelAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelAppTests.release.xcconfig"; path = "Target Support Files/Pods-TravelAppTests/Pods-TravelAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		850711CE30351BF38E84AE21 /* Pods-TravelApp-TravelAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelApp-TravelAppUITests.release.xcconfig"; path = "Target Support Files/Pods-TravelApp-TravelAppUITests/Pods-TravelApp-TravelAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		910696B124498A7C00E32192 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		910696B324498A9100E32192 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		91B576DC244141C300007038 /* YelpAPICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPICaller.swift; sourceTree = "<group>"; };
 		91B576DE2441651700007038 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		91B576E22441C56F00007038 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 				91B576DC244141C300007038 /* YelpAPICaller.swift */,
 				91B576DE2441651700007038 /* HomeTableViewCell.swift */,
 				91B576E22441C56F00007038 /* HomeViewController.swift */,
+				910696B124498A7C00E32192 /* ListTableViewCell.swift */,
+				910696B324498A9100E32192 /* ListViewController.swift */,
 				91B576E42442C5B700007038 /* DetailsViewController.swift */,
 				91B576E624432EF000007038 /* BookingViewController.swift */,
 				14E946D0244FA129003F7AB4 /* FavoritesViewController.swift */,
@@ -459,11 +465,13 @@
 				14DAC63324170D5100A171BA /* ViewController.swift in Sources */,
 				14E946D3244FA359003F7AB4 /* FavoritesCell.swift in Sources */,
 				91B576E52442C5B700007038 /* DetailsViewController.swift in Sources */,
+				910696B424498A9100E32192 /* ListViewController.swift in Sources */,
 				14E946D1244FA129003F7AB4 /* FavoritesViewController.swift in Sources */,
 				14DAC62F24170D5100A171BA /* AppDelegate.swift in Sources */,
 				14DAC63124170D5100A171BA /* SceneDelegate.swift in Sources */,
 				91B576E32441C56F00007038 /* HomeViewController.swift in Sources */,
 				91B576DD244141C300007038 /* YelpAPICaller.swift in Sources */,
+				910696B224498A7C00E32192 /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
