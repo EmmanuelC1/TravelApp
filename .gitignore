@@ -1,0 +1,5 @@
+*.swp
+*.xcconfig
+TravelApp.xcodeproj/xcuserdata/jorgegaytan.xcuserdatad/
+TravelApp.xcworkspace/xcuserdata/
+Pods/Pods.xcodeproj/xcuserdata/jorgegaytan.xcuserdatad/
