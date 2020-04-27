@@ -15,6 +15,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var businessImage: UIImageView!
     @IBOutlet weak var businessAddress: UILabel!
     @IBOutlet weak var businessPhone: UILabel!
+    @IBOutlet weak var businessAvailability: UILabel!
     //Need to configure extra label & Book Button
     @IBOutlet weak var bookButton: UIButton!
     
@@ -23,8 +24,6 @@ class DetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // EXTRA CODE HERE TO SEARCH BY BUSINESS ID, replace previous dictionary pass in
 
         // Do any additional setup after loading the view.
         businessName.text = choice["name"] as? String
@@ -48,6 +47,11 @@ class DetailsViewController: UIViewController {
         businessPhone.text = choice["display_phone"] as? String
         if choice["display_phone"] as? String == ""{
             businessPhone.text = "No number available"
+        }
+        if choice["is_closed"] as? String == "true"{
+            businessAvailability.text = "Currently Open"
+        } else {
+            businessAvailability.text = "Currently Closed"
         }
         print(self.choice!)
     }
