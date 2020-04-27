@@ -21,10 +21,13 @@ class DetailsViewController: UIViewController {
     
     var choice: [String:Any]!
     var addy: [String:Any]!
-
+    var unique:String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // Obtain unique business ID
+        var unique = choice["id"] as? String
+        
         // Do any additional setup after loading the view.
         businessName.text = choice["name"] as? String
         businessName.sizeToFit()
@@ -53,7 +56,18 @@ class DetailsViewController: UIViewController {
         } else {
             businessAvailability.text = "Currently Closed"
         }
-        print(self.choice!)
+        // Testing business hours
+        CDYelpFusionKitManager.shared.apiClient.cancelAllPendingAPIRequests()
+        CDYelpFusionKitManager.shared.apiClient.fetchBusiness(forId: unique,
+                                    locale: nil) { (business) in
+
+          if let business = business {
+            print(business.toJSON())
+          }
+        }
+        // End of testing business hours
+        
+        //print(self.choice!)
     }
     
 
