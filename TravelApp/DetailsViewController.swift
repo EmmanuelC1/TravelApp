@@ -73,8 +73,10 @@ class DetailsViewController: UIViewController {
                 self.businessAvailability.text = "Currently Closed"
             }
             self.details3 = self.details2[0]["open"] as? [[String:Any]]
-            print(self.details3!)
-            print(self.details3[0]["start"]!)
+            //print(self.details3!)
+            self.times(details: self.details3)
+            //print(self.details3[0]["start"]!)
+            // Pass in details3 to a function that interprets the days and times?
           }
         }
         //print (self.details2[0])
@@ -93,6 +95,13 @@ class DetailsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func times(details: Array<Dictionary<String, Any>>) -> Void {
+        for element in details {
+            print(element)
+        }
+        print("END OF DAYS")
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
