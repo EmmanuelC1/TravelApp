@@ -21,12 +21,15 @@ class DetailsViewController: UIViewController {
     
     var choice: [String:Any]!
     var addy: [String:Any]!
+    var details: [String:Any]!
+    var details2: [[String:Any]]!
+    var details3: [[String:Any]]!
     var unique:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Obtain unique business ID
-        var unique = choice["id"] as? String
+        let unique = choice["id"] as? String
         
         // Do any additional setup after loading the view.
         businessName.text = choice["name"] as? String
@@ -37,34 +40,44 @@ class DetailsViewController: UIViewController {
         
         // Address displays but likely unsafe.
         // Prints check values of my dictionaries/arrays
-        print(choice["location"]!)
+        //print(choice["location"]!)
         // Get just the display_address portion out of location, so basically
         // businessChoice["location"]["display_address"]
         addy = choice["location"] as? [String:Any]
-        print(addy["display_address"]!)
+        //print(addy["display_address"]!)
         // This displays the address, but with [] around and likely un-safe
         businessAddress.text = "\(String(describing: addy["display_address"]!))"
-        //businessAddress.text = addy["display_address"] as? String // This does not work, displays nothing
         businessAddress.sizeToFit()
         
         businessPhone.text = choice["display_phone"] as? String
         if choice["display_phone"] as? String == ""{
             businessPhone.text = "No number available"
         }
-        if choice["is_closed"] as? String == "true"{
-            businessAvailability.text = "Currently Open"
-        } else {
-            businessAvailability.text = "Currently Closed"
-        }
         // Testing business hours
         CDYelpFusionKitManager.shared.apiClient.cancelAllPendingAPIRequests()
-        CDYelpFusionKitManager.shared.apiClient.fetchBusiness(forId: unique,
-                                    locale: nil) { (business) in
+        CDYelpFusionKitManager.shared.apiClient.fetchBusiness(forId: unique,locale: nil) { (business) in
 
           if let business = business {
-            print(business.toJSON())
+            self.details = business.toJSON()
+            //print(business)
+            //print("DIVIDER")
+            //print(self.details!)
+            //print("DIVIDER")
+            //print(self.details["hours"]!)
+            self.details2 = self.details["hours"] as? [[String:Any]]
+            //print("DIVIDER")
+            //print(self.details2[0])
+            if self.details2[0]["is_open_now"] as! Bool {
+                self.businessAvailability.text = "Currently Open"
+            } else {
+                self.businessAvailability.text = "Currently Closed"
+            }
+            self.details3 = self.details2[0]["open"] as? [[String:Any]]
+            print(self.details3!)
+            print(self.details3[0]["start"]!)
           }
         }
+        //print (self.details2[0])
         // End of testing business hours
         
         //print(self.choice!)
