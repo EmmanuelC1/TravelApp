@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import CoreLocation
 
 class DetailsViewController: UIViewController {
     
@@ -18,7 +19,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var businessAvailability: UILabel!
     //Need to configure extra label & Book Button
     @IBOutlet weak var bookButton: UIButton!
-    
+    // Parsing dictionaries
     var choice: [String:Any]!
     var addy: [String:Any]!
     var details: [String:Any]!
@@ -34,10 +35,13 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var friHours: UILabel!
     @IBOutlet weak var satHours: UILabel!
     
+    
     var weekdays = ["N/A", "N/A", "N/A", "N/A", "N/A", "N/A", "N/A"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Obtain user lat & long
+        
         // Obtain unique business ID
         let unique = choice["id"] as? String
         
@@ -116,8 +120,7 @@ class DetailsViewController: UIViewController {
     print(end)*/ //WAS USING THIS TO INPUT ":" BUT WAS UNNECESSARY
     
     func times(details: Array<Dictionary<String, Any>>) -> Void {
-        
-        
+
         for element in details {
             // Convert 4 digit 24hr time to 12hr time & Assign times to weekdays array
             let dateFormatter = DateFormatter()
@@ -151,6 +154,7 @@ class DetailsViewController: UIViewController {
         //print("END OF TIMES FUNCTION")
     }
     
+    // Segue to booking screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.

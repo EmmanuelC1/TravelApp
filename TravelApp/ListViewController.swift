@@ -9,15 +9,19 @@
 import UIKit
 import Parse
 import CDYelpFusionKit
-import MapKit
 import CoreLocation
 
-class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
     var word:String = ""
     var business = [[String:Any]]()
+    
+    // Location variables
+    var locationManager = CLLocationManager()
+    var lat: Double!
+    var long: Double!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return business.count
@@ -43,6 +47,19 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
+        // LocationManager
+        locationManager.delegate = self
+        // Obtain user location
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        // ISSUE GETTING LOCATION
+        print (self.lat!)
+        print (self.long!)
+        
+        
+        // Get a list of businesses
         CDYelpFusionKitManager.shared.apiClient.cancelAllPendingAPIRequests()
         CDYelpFusionKitManager.shared.apiClient.searchBusinesses(byTerm: word, location: "Salinas", latitude: nil, longitude: nil, radius: 10000, categories: nil, locale: .english_unitedStates, limit: 10, offset: 0, sortBy: .rating, priceTiers: [.oneDollarSign, .twoDollarSigns], openNow: nil, openAt: nil, attributes: nil) { (response) in
             
@@ -78,6 +95,16 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // Obtain user latitude & longitude
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        if let location = locations.first {
+            //print(location.coordinate.latitude)
+            self.lat = location.coordinate.latitude
+            self.long = location.coordinate.longitude
+        }
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
