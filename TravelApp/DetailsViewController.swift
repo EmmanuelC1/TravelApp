@@ -25,6 +25,16 @@ class DetailsViewController: UIViewController {
     var details2: [[String:Any]]!
     var details3: [[String:Any]]!
     var unique:String!
+    // Time variables for the week
+    @IBOutlet weak var sunHours: UILabel!
+    @IBOutlet weak var monHours: UILabel!
+    @IBOutlet weak var tueHours: UILabel!
+    @IBOutlet weak var wedHours: UILabel!
+    @IBOutlet weak var thuHours: UILabel!
+    @IBOutlet weak var friHours: UILabel!
+    @IBOutlet weak var satHours: UILabel!
+    
+    var weekdays = ["N/A", "N/A", "N/A", "N/A", "N/A", "N/A", "N/A"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,11 +106,49 @@ class DetailsViewController: UIViewController {
     }
     */
     
+    // BEGIN OF UNNECESSARY CODE
+    /*var start = element["start"] as! String
+    var end = element["end"] as! String
+    
+    start.insert(":", at: start.index(start.startIndex, offsetBy: 2))
+    end.insert(":", at: end.index(end.startIndex, offsetBy: 2))
+    print(start)
+    print(end)*/ //WAS USING THIS TO INPUT ":" BUT WAS UNNECESSARY
+    
     func times(details: Array<Dictionary<String, Any>>) -> Void {
+        
+        
         for element in details {
-            print(element)
+            // Convert 4 digit 24hr time to 12hr time & Assign times to weekdays array
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HHmm"
+            let date = dateFormatter.date(from: element["start"] as! String)
+            dateFormatter.dateFormat = "h:mma"
+            var Date12 = dateFormatter.string(from: date!)
+            //print ("12 hour formatted start:", Date12)
+            weekdays[element["day"] as! Int] = Date12
+            
+            dateFormatter.dateFormat = "HHmm"
+            let date2 = dateFormatter.date(from: element["end"] as! String)
+            dateFormatter.dateFormat = "h:mma"
+            Date12 = dateFormatter.string(from: date2!)
+            //print ("12 hour formatted end:", Date12)
+            weekdays[element["day"] as! Int] += "-"+Date12
+            
+            // Prints to check contents
+            //print(weekdays[element["day"] as! Int])
+            //print("Content of entire day")
+            //print(element)
         }
-        print("END OF DAYS")
+        sunHours.text = weekdays[0]
+        monHours.text = weekdays[1]
+        tueHours.text = weekdays[2]
+        wedHours.text = weekdays[3]
+        thuHours.text = weekdays[4]
+        friHours.text = weekdays[5]
+        satHours.text = weekdays[6]
+        
+        //print("END OF TIMES FUNCTION")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

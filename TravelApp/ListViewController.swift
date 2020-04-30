@@ -10,6 +10,7 @@ import UIKit
 import Parse
 import CDYelpFusionKit
 import MapKit
+import CoreLocation
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
