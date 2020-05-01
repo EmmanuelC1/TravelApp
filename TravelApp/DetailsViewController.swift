@@ -73,7 +73,7 @@ class DetailsViewController: UIViewController {
 
           if let business = business {
             self.details = business.toJSON()
-            //print(business)
+            print(business)
             //print("DIVIDER")
             //print(self.details!)
             //print("DIVIDER")
@@ -81,14 +81,22 @@ class DetailsViewController: UIViewController {
             self.details2 = self.details["hours"] as? [[String:Any]]
             //print("DIVIDER")
             //print(self.details2[0])
-            if self.details2[0]["is_open_now"] as! Bool {
-                self.businessAvailability.text = "Currently Open"
+            if self.details2 != nil, let isOpen = self.details2[0]["is_open_now"] as? Bool {
+                self.businessAvailability.text = isOpen ? "Currently Open" : "Currently Closed"
+                self.details3 = self.details2[0]["open"] as? [[String:Any]]
+                //self.times(details: self.details3)
+            } else if self.details2 == nil {
+                self.businessAvailability.text = "Not Available"
             } else {
                 self.businessAvailability.text = "Currently Closed"
             }
-            self.details3 = self.details2[0]["open"] as? [[String:Any]]
+            
+            if self.details3 != nil, let hoursExist = self.details3 {
+                self.times(details: hoursExist)
+            }
+            //self.details3 = self.details2[0]["open"] as? [[String:Any]]
             //print(self.details3!)
-            self.times(details: self.details3)
+            //self.times(details: self.details3)
             //print(self.details3[0]["start"]!)
             // Pass in details3 to a function that interprets the days and times?
           }

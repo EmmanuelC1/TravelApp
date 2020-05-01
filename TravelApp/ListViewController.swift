@@ -20,8 +20,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // Location variables
     var locationManager = CLLocationManager()
-    var lat: Double!
-    var long: Double!
+    //var lat: Double!
+    //var long: Double!
+    var lat = 0.0
+    var long = 0.0
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return business.count
@@ -48,20 +50,17 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         
         // LocationManager
-        locationManager.delegate = self
-        // Obtain user location
         locationManager.requestWhenInUseAuthorization()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
-        // ISSUE GETTING LOCATION
-        print (self.lat!)
-        print (self.long!)
-        
-        
+        //var currentLoc: CLLocation!
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+        /*
         // Get a list of businesses
         CDYelpFusionKitManager.shared.apiClient.cancelAllPendingAPIRequests()
-        CDYelpFusionKitManager.shared.apiClient.searchBusinesses(byTerm: word, location: "Salinas", latitude: nil, longitude: nil, radius: 10000, categories: nil, locale: .english_unitedStates, limit: 10, offset: 0, sortBy: .rating, priceTiers: [.oneDollarSign, .twoDollarSigns], openNow: nil, openAt: nil, attributes: nil) { (response) in
+        CDYelpFusionKitManager.shared.apiClient.searchBusinesses(byTerm: word, location: nil, latitude: lat, longitude: long, radius: 10000, categories: nil, locale: .english_unitedStates, limit: 10, offset: 0, sortBy: .rating, priceTiers: [.oneDollarSign, .twoDollarSigns], openNow: nil, openAt: nil, attributes: nil) { (response) in
             
             if let response = response,
                 let businesses = response.businesses,
@@ -79,7 +78,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.business = [["name": "No search results found."]]
                 self.tableView.reloadData()
             }
-        }
+        }*/
             
 
         // Do any additional setup after loading the view.
@@ -98,12 +97,37 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // Obtain user latitude & longitude
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        if let location = locations.first {
-            //print(location.coordinate.latitude)
-            self.lat = location.coordinate.latitude
-            self.long = location.coordinate.longitude
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        lat = locValue.latitude
+        long = locValue.longitude
+        locationManager.stopUpdatingLocation()
+        // Get a list of businesses
+        CDYelpFusionKitManager.shared.apiClient.cancelAllPendingAPIRequests()
+        CDYelpFusionKitManager.shared.apiClient.searchBusinesses(byTerm: word, location: nil, latitude: lat, longitude: long, radius: 10000, categories: nil, locale: .english_unitedStates, limit: 10, offset: 0, sortBy: .rating, priceTiers: [.oneDollarSign, .twoDollarSigns], openNow: nil, openAt: nil, attributes: nil) { (response) in
+            
+            if let response = response,
+                let businesses = response.businesses,
+                businesses.count > 0 {
+                //print(businesses)
+                //print(businesses.toJSON())
+                    
+                self.business = businesses.toJSON()
+                //print(self.business)
+                self.tableView.reloadData()
+                
+            }
+            // If no results found, set default message
+            else {
+                self.business = [["name": "No search results found."]]
+                self.tableView.reloadData()
+            }
         }
+        
+        
+        print("COORDINATES")
+        print(lat)
+        print(long)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
