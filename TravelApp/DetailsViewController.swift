@@ -67,11 +67,11 @@ class DetailsViewController: UIViewController {
         
         // Address displays but likely unsafe.
         // Prints check values of my dictionaries/arrays
-        print(choice["location"]!)
+        //print(choice["location"]!)
         // Get just the display_address portion out of location, so basically
         // businessChoice["location"]["display_address"]
         addy = choice["location"] as? [String:Any]
-        print (addy["display_address"]!)
+        //print (addy["display_address"]!)
         // This displays the address, but with [] around and likely un-safe
         businessAddress.text = "\(String(describing: addy["display_address"]!))"
         //businessAddress.text = addy["display_address"] as? String // This does not work, displays nothing
@@ -115,7 +115,7 @@ class DetailsViewController: UIViewController {
             // Pass in details3 to a function that interprets the days and times?
           }
         }
-        print(self.choice!)
+        //print(self.choice!)
     }
     
 

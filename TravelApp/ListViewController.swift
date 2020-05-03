@@ -102,7 +102,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     // Obtain user latitude & longitude while then performing the specific business YelpAPI call
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        //print("locations = \(locValue.latitude) \(locValue.longitude)")
         lat = locValue.latitude
         long = locValue.longitude
         locationManager.stopUpdatingLocation()
@@ -125,7 +125,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             else {
                 //self.business = [["name": "No search results found."]]
                 //self.tableView.reloadData()
-                print("Running")
+                //print("Running")
                 // Having a difficult time displaying Loading then no search results found. Displays No search results found immediately.
                 // Works but not always consistent now in order
                 if self.business.count == 0 && self.nothing.text == "  Loading..." {
@@ -134,9 +134,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
         // Coordinate checks
-        print("COORDINATES")
-        print(lat)
-        print(long)
+        //print("COORDINATES")
+        //print(lat)
+        //print(long)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
