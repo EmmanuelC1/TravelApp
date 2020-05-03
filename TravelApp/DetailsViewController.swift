@@ -11,13 +11,13 @@ import AlamofireImage
 import CoreLocation
 
 class DetailsViewController: UIViewController {
-    
+    // Outlets for labels
     @IBOutlet weak var businessName: UILabel!
     @IBOutlet weak var businessImage: UIImageView!
     @IBOutlet weak var businessAddress: UILabel!
     @IBOutlet weak var businessPhone: UILabel!
     @IBOutlet weak var businessAvailability: UILabel!
-    //Need to configure extra label & Book Button
+    // Need to configure extra label & Book Button
     @IBOutlet weak var bookButton: UIButton!
     // Parsing dictionaries
     var choice: [String:Any]!
@@ -26,7 +26,7 @@ class DetailsViewController: UIViewController {
     var details2: [[String:Any]]!
     var details3: [[String:Any]]!
     var unique:String!
-    // Time variables for the week
+    // Time outlets
     @IBOutlet weak var sunHours: UILabel!
     @IBOutlet weak var monHours: UILabel!
     @IBOutlet weak var tueHours: UILabel!
@@ -34,8 +34,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var thuHours: UILabel!
     @IBOutlet weak var friHours: UILabel!
     @IBOutlet weak var satHours: UILabel!
-    
-    
+    // Time variable
     var weekdays = ["N/A", "N/A", "N/A", "N/A", "N/A", "N/A", "N/A"]
     
     override func viewDidLoad() {
@@ -67,13 +66,13 @@ class DetailsViewController: UIViewController {
         if choice["display_phone"] as? String == ""{
             businessPhone.text = "No number available"
         }
-        // Testing business hours
+        // Testing business hours by using YelpAPI for business details
         CDYelpFusionKitManager.shared.apiClient.cancelAllPendingAPIRequests()
         CDYelpFusionKitManager.shared.apiClient.fetchBusiness(forId: unique,locale: nil) { (business) in
-
+          // If business details are found, break apart the response into different types of dictionaries, depending on response
           if let business = business {
             self.details = business.toJSON()
-            print(business)
+            //print(business)
             //print("DIVIDER")
             //print(self.details!)
             //print("DIVIDER")
@@ -127,6 +126,7 @@ class DetailsViewController: UIViewController {
     print(start)
     print(end)*/ //WAS USING THIS TO INPUT ":" BUT WAS UNNECESSARY
     
+    // Function to convert times from 24hr to 12hr format
     func times(details: Array<Dictionary<String, Any>>) -> Void {
 
         for element in details {
@@ -151,6 +151,7 @@ class DetailsViewController: UIViewController {
             //print("Content of entire day")
             //print(element)
         }
+        // Assign hours to their labels
         sunHours.text = weekdays[0]
         monHours.text = weekdays[1]
         tueHours.text = weekdays[2]
@@ -158,7 +159,6 @@ class DetailsViewController: UIViewController {
         thuHours.text = weekdays[4]
         friHours.text = weekdays[5]
         satHours.text = weekdays[6]
-        
         //print("END OF TIMES FUNCTION")
     }
     
