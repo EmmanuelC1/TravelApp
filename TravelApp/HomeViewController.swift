@@ -19,9 +19,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var counter = 0
     
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return choices.count
     }
+  
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+       
+       return 100
+        
+        
+    }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -30,8 +40,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.categories1NameLabel.text = choices[counter]
         counter += 1
         
+        
+        cell.layer.cornerRadius = cell.frame.height / 2.0
+        cell.layer.borderWidth = 1
+        
+      
+        
+    
         return cell
     }
+
+  
     
 
     override func viewDidLoad() {
