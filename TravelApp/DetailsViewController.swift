@@ -11,16 +11,33 @@ import AlamofireImage
 
 class DetailsViewController: UIViewController {
     
+    // Outlets for labels
     @IBOutlet weak var posterView: UIImageView!
     @IBOutlet weak var businessName: UILabel!
     @IBOutlet weak var businessImage: UIImageView!
     @IBOutlet weak var businessAddress: UILabel!
     @IBOutlet weak var businessPhone: UILabel!
+    @IBOutlet weak var businessAvailability: UILabel!
     //Need to configure extra label & Book Button
     @IBOutlet weak var bookButton: UIButton!
-    
+    // Parsing dictionaries
     var choice: [String:Any]!
     var addy: [String:Any]!
+    // Extra parsing for hours
+    var details: [String:Any]!
+    var details2: [[String:Any]]!
+    var details3: [[String:Any]]!
+    var unique:String!
+    // Time outlets
+    @IBOutlet weak var sunHours: UILabel!
+    @IBOutlet weak var monHours: UILabel!
+    @IBOutlet weak var tueHours: UILabel!
+    @IBOutlet weak var wedHours: UILabel!
+    @IBOutlet weak var thuHours: UILabel!
+    @IBOutlet weak var friHours: UILabel!
+    @IBOutlet weak var satHours: UILabel!
+    // Time list for all week hours
+    var weekdays = ["N/A", "N/A", "N/A", "N/A", "N/A", "N/A", "N/A"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +48,9 @@ class DetailsViewController: UIViewController {
         posterView.layer.borderColor = UIColor.white.cgColor
         posterView.layer.borderWidth = 4
         businessName.layer.cornerRadius = 20.0
+        
+        // Obtain unique business ID
+        let unique = choice["id"] as? String
         
         
         // EXTRA CODE HERE TO SEARCH BY BUSINESS ID, replace previous dictionary pass in
@@ -61,6 +81,40 @@ class DetailsViewController: UIViewController {
         if choice["display_phone"] as? String == ""{
             businessPhone.text = "No number available"
         }
+        // Testing business hours by using YelpAPI for business details
+        CDYelpFusionKitManager.shared.apiClient.cancelAllPendingAPIRequests()
+        CDYelpFusionKitManager.shared.apiClient.fetchBusiness(forId: unique,locale: nil) { (business) in
+          // If business details are found, break apart the response into different types of dictionaries, depending on response
+          if let business = business {
+            self.details = business.toJSON()
+            //print(business)
+            //print("DIVIDER")
+            //print(self.details!)
+            //print("DIVIDER")
+            //print(self.details["hours"]!)
+            self.details2 = self.details["hours"] as? [[String:Any]]
+            //print("DIVIDER")
+            //print(self.details2[0])
+            if self.details2 != nil, let isOpen = self.details2[0]["is_open_now"] as? Bool {
+                self.businessAvailability.text = isOpen ? "Currently Open" : "Currently Closed"
+                self.details3 = self.details2[0]["open"] as? [[String:Any]]
+                //self.times(details: self.details3)
+            } else if self.details2 == nil {
+                self.businessAvailability.text = "Not Available"
+            } else {
+                self.businessAvailability.text = "Currently Closed"
+            }
+            
+            if self.details3 != nil, let hoursExist = self.details3 {
+                self.times(details: hoursExist)
+            }
+            //self.details3 = self.details2[0]["open"] as? [[String:Any]]
+            //print(self.details3!)
+            //self.times(details: self.details3)
+            //print(self.details3[0]["start"]!)
+            // Pass in details3 to a function that interprets the days and times?
+          }
+        }
         print(self.choice!)
     }
     
@@ -74,6 +128,42 @@ class DetailsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // Function to convert times from 24hr to 12hr format
+    func times(details: Array<Dictionary<String, Any>>) -> Void {
+
+        for element in details {
+            // Convert 4 digit 24hr time to 12hr time & Assign times to weekdays array
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HHmm"
+            let date = dateFormatter.date(from: element["start"] as! String)
+            dateFormatter.dateFormat = "h:mma"
+            var Date12 = dateFormatter.string(from: date!)
+            //print ("12 hour formatted start:", Date12)
+            weekdays[element["day"] as! Int] = Date12
+            
+            dateFormatter.dateFormat = "HHmm"
+            let date2 = dateFormatter.date(from: element["end"] as! String)
+            dateFormatter.dateFormat = "h:mma"
+            Date12 = dateFormatter.string(from: date2!)
+            //print ("12 hour formatted end:", Date12)
+            weekdays[element["day"] as! Int] += "-"+Date12
+            
+            // Prints to check contents
+            //print(weekdays[element["day"] as! Int])
+            //print("Content of entire day")
+            //print(element)
+        }
+        // Assign hours to their labels
+        sunHours.text = weekdays[0]
+        monHours.text = weekdays[1]
+        tueHours.text = weekdays[2]
+        wedHours.text = weekdays[3]
+        thuHours.text = weekdays[4]
+        friHours.text = weekdays[5]
+        satHours.text = weekdays[6]
+        //print("END OF TIMES FUNCTION")
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
