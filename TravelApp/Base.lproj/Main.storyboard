@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -411,7 +411,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROD-BV-jYt">
-                                                    <rect key="frame" x="24" y="19" width="132" height="24"/>
+                                                    <rect key="frame" x="28" y="19" width="132" height="24"/>
                                                     <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="19"/>
                                                     <color key="textColor" red="0.56012916560000003" green="0.21437031030000001" blue="0.152469784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -452,7 +452,7 @@
             </objects>
             <point key="canvasLocation" x="811.59420289855075" y="1686.6847826086957"/>
         </scene>
-        <!--Restaurants-->
+        <!--Results-->
         <scene sceneID="tsr-s9-Z78">
             <objects>
                 <viewController id="eMl-wE-jsa" customClass="ListViewController" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -465,6 +465,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.2047929168" green="0.48154503110000002" blue="0.486428678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.2004078329" green="0.49271166319999998" blue="0.49423056840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Op1-PA-SXa">
+                                    <rect key="frame" x="0.0" y="186" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="-1" reuseIdentifier="ListTableViewCell" rowHeight="130" id="iA1-g3-2Yp" customClass="ListTableViewCell" customModule="TravelApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="130"/>
@@ -532,7 +539,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="p4X-9r-wag"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Restaurants" id="lmE-SH-f1q">
+                    <navigationItem key="navigationItem" title="Results" id="lmE-SH-f1q">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="w9k-2D-8FB">
                             <color key="tintColor" red="0.56012916560000003" green="0.21437031030000001" blue="0.152469784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -541,6 +548,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="nothing" destination="Op1-PA-SXa" id="nOZ-ZU-3jF"/>
                         <outlet property="tableView" destination="uGl-8z-PEw" id="hLN-fR-7od"/>
                     </connections>
                 </viewController>
@@ -568,7 +576,7 @@
             </objects>
             <point key="canvasLocation" x="43" y="151"/>
         </scene>
-        <!--Catagories-->
+        <!--Categories-->
         <scene sceneID="dBK-a0-39k">
             <objects>
                 <viewController id="B1Q-k7-4Hf" customClass="HomeViewController" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -591,7 +599,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UVX-45-vvZ">
-                                                    <rect key="frame" x="10" y="5" width="0.0" height="90"/>
+                                                    <rect key="frame" x="10" y="5" width="394" height="90"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="228" id="pc7-rF-Pe1">
                                                             <rect key="frame" x="-17" y="-6" width="270" height="103"/>
@@ -638,7 +646,7 @@
                         <color key="backgroundColor" red="0.2004078329" green="0.49271166319999998" blue="0.49423056840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="3DF-LE-glo"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Catagories" id="R5S-2p-oHN"/>
+                    <navigationItem key="navigationItem" title="Categories" id="R5S-2p-oHN"/>
                     <connections>
                         <outlet property="tableView" destination="oRb-oo-iZe" id="Q25-Xd-vfj"/>
                     </connections>
@@ -705,9 +713,12 @@
             <point key="canvasLocation" x="814" y="960"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Dnf-lh-Iwk"/>
+    </inferredMetricsTieBreakers>
     <resources>
-        <image name="heart" catalog="system" width="64" height="54"/>
-        <image name="house" catalog="system" width="64" height="54"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="house" catalog="system" width="128" height="110"/>
         <image name="icons8-address" width="48" height="48"/>
         <image name="icons8-future" width="48" height="48"/>
         <image name="icons8-next_page" width="25" height="25"/>
@@ -715,9 +726,6 @@
         <image name="icons8-star_filled" width="48" height="48"/>
         <image name="icons8-us_dollar" width="24" height="24"/>
         <image name="ios-marketing" width="2048" height="2048"/>
-        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Dnf-lh-Iwk"/>
-    </inferredMetricsTieBreakers>
 </document>

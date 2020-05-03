@@ -12,15 +12,22 @@ import CDYelpFusionKit
 import MapKit
 import Alamofire
 
-class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
-    
+    // Variables for location/business
     var word:String = ""
     var business = [[String:Any]]()
     var choice: [String:Any]!
     var choice2: [Double:Any]!
+    // Location variables
+    var locationManager = CLLocationManager()
+    // Initialization and default coordinate values
+    var lat = 0.0
+    var long = 0.0
+    // Label if nothing is added
+    @IBOutlet weak var nothing: UILabel!
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,19 +51,19 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         
-      cell.restaurantImageView.layer.cornerRadius = cell.frame.height / 2.5
-      cell.restaurantImageView.layer.borderWidth = 4
-      cell.restaurantImageView.layer.borderColor = UIColor.white.cgColor
+       cell.restaurantImageView.layer.cornerRadius = cell.frame.height / 2.5
+       cell.restaurantImageView.layer.borderWidth = 4
+       cell.restaurantImageView.layer.borderColor = UIColor.white.cgColor
         
-      cell.ratingLabel.text = String(rate)
-      cell.priceLabel.text = price
-      cell.listNameLabel.text = name
-      cell.restaurantImageView.af_setImage(withURL: posterUrl!)
+       cell.ratingLabel.text = String(rate)
+       cell.priceLabel.text = price
+       cell.listNameLabel.text = name
+       cell.restaurantImageView.af_setImage(withURL: posterUrl!)
         
         
       
         
-        return cell
+       return cell
     }
     
 
@@ -65,39 +72,18 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.delegate = self
         tableView.dataSource = self
-      
-    
         
-      
+        // Works but not a consistent display
+        self.nothing.text = "  Loading..."
         
-        CDYelpFusionKitManager.shared.apiClient.cancelAllPendingAPIRequests()
-        CDYelpFusionKitManager.shared.apiClient.searchBusinesses(byTerm: word, location: "Salinas", latitude: nil, longitude: nil, radius: 10000, categories: nil, locale: .english_unitedStates, limit: 10, offset: 0, sortBy: .rating, priceTiers: [.oneDollarSign, .twoDollarSigns, .threeDollarSigns], openNow: nil, openAt: nil, attributes: nil) { (response) in
-            
-            
-            if let response = response,
-                let businesses = response.businesses,
-                businesses.count > 0 {
-                //print(businesses)
-                //print(businesses.toJSON())
-                    
-                self.business = businesses.toJSON()
-                print(self.business)
-                self.tableView.reloadData()
-                
-                
-                
-              
-               }
-            // If no results found, set default message
-            else {
-                self.business = [["name": "No search results found."]]
-                self.tableView.reloadData()
-            }
-            
-            
-          
+        // LocationManager
+        locationManager.requestWhenInUseAuthorization()
+        // If authorized, find location coordinates
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
         }
-           
 
         // Do any additional setup after loading the view.
     }
@@ -112,6 +98,46 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // Obtain user latitude & longitude while then performing the specific business YelpAPI call
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        lat = locValue.latitude
+        long = locValue.longitude
+        locationManager.stopUpdatingLocation()
+        // Get a list of businesses through YelpAPI call with user's location data
+        CDYelpFusionKitManager.shared.apiClient.cancelAllPendingAPIRequests()
+        CDYelpFusionKitManager.shared.apiClient.searchBusinesses(byTerm: word, location: nil, latitude: lat, longitude: long, radius: 10000, categories: nil, locale: .english_unitedStates, limit: 10, offset: 0, sortBy: .rating, priceTiers: [.oneDollarSign, .twoDollarSigns], openNow: nil, openAt: nil, attributes: nil) { (response) in
+            // Obtain responses in .JSON format
+            if let response = response,
+                let businesses = response.businesses,
+                businesses.count > 0 {
+                //print(businesses)
+                //print(businesses.toJSON())
+                    
+                self.business = businesses.toJSON()
+                //print(self.business)
+                self.tableView.reloadData()
+                self.nothing.text = ""
+            }
+            // If no results found, set default message
+            else {
+                //self.business = [["name": "No search results found."]]
+                //self.tableView.reloadData()
+                print("Running")
+                // Having a difficult time displaying Loading then no search results found. Displays No search results found immediately.
+                // Works but not always consistent now in order
+                if self.business.count == 0 && self.nothing.text == "  Loading..." {
+                    self.nothing.text = "  No search results found."
+                }
+            }
+        }
+        // Coordinate checks
+        print("COORDINATES")
+        print(lat)
+        print(long)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
