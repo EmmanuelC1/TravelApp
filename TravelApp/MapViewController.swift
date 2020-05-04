@@ -8,16 +8,12 @@
 
 import UIKit
 import MapKit
-//import MessageInputBar
+
 import CoreLocation
 import CDYelpFusionKit
 import Parse
 
-//struct Stadium {
-//    var name: String
-//    var latitude: CLLocationDegrees
-//    var longitude: CLLocationDegrees
-//}
+
 class MapViewController: ViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     @IBOutlet weak var searchInput: UITextField!
     @IBOutlet weak var MapView: MKMapView!
@@ -26,8 +22,8 @@ class MapViewController: ViewController, CLLocationManagerDelegate, MKMapViewDel
     var lat: Double!
     var long: Double!
     var businesses = [[String:Any]]()
-    //let searchBar = MessageInputBar()
-    //var showsSearchBar = false
+    var chosen: [String:Any]?
+
     
 
     
@@ -57,21 +53,13 @@ class MapViewController: ViewController, CLLocationManagerDelegate, MKMapViewDel
         
      
     }
-//    @objc func keyboardWillBeHidden(note: Notification){
-//           searchBar.inputTextView.text = nil
-//           showsSearchBar = false
-//           becomeFirstResponder()
-//
-//       }
-//    override var inputAccessoryView: UIView?{
-//        return searchBar
-//    }
-//    override var canBecomeFirstResponder: Bool{
-//        return showsSearchBar
-//    }
-//    func checkLocationStatus(){
-//
-//    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+           self.view.endEditing(true)
+       }
+       func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+           textField.resignFirstResponder()
+           return (true)
+       }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
            let userLocation: CLLocation = locations[0] as CLLocation
@@ -120,6 +108,8 @@ class MapViewController: ViewController, CLLocationManagerDelegate, MKMapViewDel
     
     
     func createMarker(businesses: [[String : Any]]){
+        MapView.removeAnnotations(MapView.annotations)
+
         for business in businesses{
             let annotations = MKPointAnnotation()
             annotations.title = business["name"] as? String
@@ -139,22 +129,7 @@ class MapViewController: ViewController, CLLocationManagerDelegate, MKMapViewDel
     func removeMarker(annotations: MKPointAnnotation){
         MapView.removeAnnotation(annotations)
     }
-//    func checkLocationAuthorization(){
-//        switch CLLocationManager.authorizationStatus() {
-//        case .authorizedWhenInUse:
-//          MapView.showsUserLocation = true
-//
-//         case .denied: // Show alert telling users how to turn on permissions
-//         break
-//        case .notDetermined:
-//          locationManager.requestWhenInUseAuthorization()
-//          MapView.showsUserLocation = true
-//        case .restricted: // Show an alert letting them know what’s up
-//         break
-//        case .authorizedAlways:
-//         break
-//        }
-//    }
+
     
 
     /*
@@ -165,8 +140,8 @@ class MapViewController: ViewController, CLLocationManagerDelegate, MKMapViewDel
         // Pass the selected object to the new view controller.
     }
     */
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        //let
+       func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+       
         
         let business = businesses.filter { (business) -> Bool in
            // print(business)
@@ -184,9 +159,9 @@ class MapViewController: ViewController, CLLocationManagerDelegate, MKMapViewDel
             return false
         }
         //print()
-        print(business)
-        print(view.annotation?.coordinate.latitude)
-        print(view.annotation?.coordinate.longitude)
+        chosen = business.first
+        self.performSegue(withIdentifier: "selectedMapPin", sender: nil)
+     
     }
    
     @IBAction func onLogout(_ sender: Any) {
@@ -198,4 +173,12 @@ class MapViewController: ViewController, CLLocationManagerDelegate, MKMapViewDel
         let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
         sceneDelegate.window?.rootViewController = loginViewController
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+           
+           
+           if let chosen = chosen,let detailViewController = segue.destination as? DetailsViewController{
+               detailViewController.choice = chosen
+           }
+          
+       }
 }

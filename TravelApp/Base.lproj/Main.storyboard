@@ -159,6 +159,7 @@
                     <connections>
                         <outlet property="MapView" destination="L5j-Ry-Ena" id="A7J-KI-HZU"/>
                         <outlet property="searchInput" destination="qtU-kj-ZKS" id="bJS-Ue-iW9"/>
+                        <segue destination="3mU-Ha-99B" kind="show" identifier="selectedMapPin" id="Xrv-e2-PwF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bk1-qM-LmQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -864,6 +865,6 @@
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Dnf-lh-Iwk"/>
+        <segue reference="Xrv-e2-PwF"/>
     </inferredMetricsTieBreakers>
 </document>
