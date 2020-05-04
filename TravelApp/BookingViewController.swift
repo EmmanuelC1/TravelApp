@@ -8,26 +8,29 @@
 
 import UIKit
 import AlamofireImage
+import Parse
 
-
-class BookingViewController: UIViewController {
+class BookingViewController: UIViewController, UINavigationBarDelegate, UIImagePickerControllerDelegate{
     
     @IBOutlet weak var businessName: UILabel!
-    
     @IBOutlet weak var inputTextField: UITextField!
-    @IBOutlet weak var inputTimeTextField: UITextField!
-    
-    
     @IBOutlet weak var restaurantView: UIImageView!
     
-    var choice: [String:Any]!
+    // MybookingView
     
+    
+    var booking = [PFObject]() // empty array
+    
+    var choice: [String:Any]!
     let datePicker = UIDatePicker()
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+     
 
-        // Do any additional setup after loading the view.
+      
         businessName.text = choice["name"] as? String
         businessName.sizeToFit()
         
@@ -40,9 +43,35 @@ class BookingViewController: UIViewController {
     
     }
     
-    func createDatePicker(){
+     // done btn for Parse data
+    @IBAction func confrimButton(_ sender: Any) { // set up schema
         
-       
+        let booking = PFObject(className: "ConfirmBookings") // name of table
+        
+        booking["dateTime"] = inputTextField.text!
+        
+        booking["username"] = PFUser.current()!
+        
+        
+        let imageData = restaurantView.image!.pngData()
+        let file = PFFileObject(name: "image.png", data:imageData!)
+        
+        booking["image"] = file
+        
+        booking.saveInBackground{(success, error) in
+            
+            if success {
+                self.dismiss(animated: true, completion: nil)
+                print("saved!")
+            }else{
+                    print("error!")
+                 }
+            }
+         }
+    
+    
+    //********* create picker function*****************
+    func createDatePicker(){
         
        inputTextField.textAlignment = .center
         
@@ -66,7 +95,7 @@ class BookingViewController: UIViewController {
         
         }
     
-    @objc func donePressed(){
+    @objc func donePressed(){ // done button on date picker
          // formatter
         let formatter = DateFormatter()
         formatter.dateStyle = .medium

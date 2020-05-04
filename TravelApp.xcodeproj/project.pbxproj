@@ -28,6 +28,8 @@
 		91B576E32441C56F00007038 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B576E22441C56F00007038 /* HomeViewController.swift */; };
 		91B576E52442C5B700007038 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B576E42442C5B700007038 /* DetailsViewController.swift */; };
 		91B576E724432EF000007038 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B576E624432EF000007038 /* BookingViewController.swift */; };
+		F0E6CEDB245EE41000A2F9F7 /* MyBookingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6CEDA245EE41000A2F9F7 /* MyBookingsViewController.swift */; };
+		F0EF070A245EBF70006E17E3 /* MybookingCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EF0709245EBF70006E17E3 /* MybookingCellTableViewCell.swift */; };
 		FCE6C0BAC7E24DE3879A74E7 /* Pods_TravelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 935BFB8301743EB3B84B01F8 /* Pods_TravelApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +98,8 @@
 		D38B7C8BEE389ADF4177C7AB /* Pods-TravelApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelApp.debug.xcconfig"; path = "Target Support Files/Pods-TravelApp/Pods-TravelApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DCE6CD90F434A1971C8C9A35 /* Pods_TravelApp_TravelAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelApp_TravelAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC72209A78B4AA03E1CBD02F /* Pods-TravelAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TravelAppTests/Pods-TravelAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F0E6CEDA245EE41000A2F9F7 /* MyBookingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookingsViewController.swift; sourceTree = "<group>"; };
+		F0EF0709245EBF70006E17E3 /* MybookingCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MybookingCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,9 +170,11 @@
 				910696B124498A7C00E32192 /* ListTableViewCell.swift */,
 				910696B324498A9100E32192 /* ListViewController.swift */,
 				91B576E42442C5B700007038 /* DetailsViewController.swift */,
-				91B576E624432EF000007038 /* BookingViewController.swift */,
 				14E946D0244FA129003F7AB4 /* FavoritesViewController.swift */,
 				14E946D2244FA359003F7AB4 /* FavoritesCell.swift */,
+				F0EF0709245EBF70006E17E3 /* MybookingCellTableViewCell.swift */,
+				F0E6CEDA245EE41000A2F9F7 /* MyBookingsViewController.swift */,
+				91B576E624432EF000007038 /* BookingViewController.swift */,
 			);
 			path = TravelApp;
 			sourceTree = "<group>";
@@ -468,10 +474,12 @@
 				910696B424498A9100E32192 /* ListViewController.swift in Sources */,
 				14E946D1244FA129003F7AB4 /* FavoritesViewController.swift in Sources */,
 				14DAC62F24170D5100A171BA /* AppDelegate.swift in Sources */,
+				F0E6CEDB245EE41000A2F9F7 /* MyBookingsViewController.swift in Sources */,
 				14DAC63124170D5100A171BA /* SceneDelegate.swift in Sources */,
 				91B576E32441C56F00007038 /* HomeViewController.swift in Sources */,
 				91B576DD244141C300007038 /* YelpAPICaller.swift in Sources */,
 				910696B224498A7C00E32192 /* ListTableViewCell.swift in Sources */,
+				F0EF070A245EBF70006E17E3 /* MybookingCellTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,6 +736,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9P2FA3GTFJ;
 				INFOPLIST_FILE = TravelAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
