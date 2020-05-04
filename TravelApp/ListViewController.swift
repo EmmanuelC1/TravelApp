@@ -128,6 +128,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 //print("Running")
                 // Having a difficult time displaying Loading then no search results found. Displays No search results found immediately.
                 // Works but not always consistent now in order
+                
                 if self.business.count == 0 && self.nothing.text == "  Loading..." {
                     self.nothing.text = "  No search results found."
                 }
@@ -155,5 +156,15 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
-   
+    
+    @IBAction func onLogout(_ sender: Any) {
+         PFUser.logOut()
+                
+         let main = UIStoryboard(name: "Main", bundle: nil)
+         let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+        
+         let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+         sceneDelegate.window?.rootViewController = loginViewController
+    }
+    
 }

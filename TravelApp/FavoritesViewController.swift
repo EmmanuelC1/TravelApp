@@ -24,8 +24,16 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.dataSource = self
 
         // Do any additional setup after loading the view.
-        getObjectIds()
+//        getObjectIds()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        businessIDs.removeAll()
+        favoritedBusiness.removeAll()
+        tableView.reloadData()
+        getObjectIds()
     }
     
     func getObjectIds() {
@@ -39,7 +47,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
             }
             else if let objects = objects {
                 // found objects
-                //print("Successfully retrieved \(objects.count) favorited businesses.")
+                print("Successfully retrieved \(objects.count) favorited businesses.")
                 
                 //Append BussinessId of each object to businessIDs from Parse
                 for object in objects {
@@ -65,6 +73,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         else {
             //iterate through businessIDs and call API to get dictionary for that business
             for id in businessIDs {
+                usleep(250000) //will sleep for .002 seconds
                 CDYelpFusionKitManager.shared.apiClient.fetchBusiness(forId: id, locale: nil) { (response) in
                     if let response = response {
                         // append business to favoritedBusiness
@@ -99,6 +108,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoritesCell") as! FavoritesCell
+        cell.isUserInteractionEnabled = true
         
         let choice = favoritedBusiness[indexPath.row]
         let name = choice["name"] as! String

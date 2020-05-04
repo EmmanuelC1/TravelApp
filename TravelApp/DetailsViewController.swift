@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import Parse
 
 class DetailsViewController: UIViewController {
     
@@ -20,6 +21,8 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var businessAvailability: UILabel!
     //Need to configure extra label & Book Button
     @IBOutlet weak var bookButton: UIButton!
+    @IBOutlet weak var favButton: UIButton!
+    var isFav = false
     // Parsing dictionaries
     var choice: [String:Any]!
     var addy: [String:Any]!
@@ -116,6 +119,7 @@ class DetailsViewController: UIViewController {
           }
         }
         //print(self.choice!)
+        isFavorited()
     }
     
 
@@ -174,5 +178,101 @@ class DetailsViewController: UIViewController {
         bookingsViewController.choice = choice
         
     }
-
+    
+    func isFavorited(){
+        var isFavorited = false
+        //get current user
+        let user = PFUser.current()
+        
+        let query = PFQuery(className: "Favorites")
+        query.whereKey("businessID", equalTo: choice["id"]!)
+        query.findObjectsInBackground { (objects: [PFObject]?,error: Error?) in
+            if let error = error {
+                //Log details of the failure
+                print(error.localizedDescription)
+            }
+            else if let objects = objects {
+                //Found objects
+                //Iterate through all businessIDs that match the choice["id"]
+                for object in objects {
+                    //If the user matches then isFavorited = true, break
+                    //Else do not do anything and keep looping to check if the users match
+                    if (((object["user"] as AnyObject).objectId!!) == user!.objectId!) {
+                        isFavorited.toggle()
+                        self.favButton.setImage(UIImage(systemName: "heart.fill"), for: UIControl.State.normal)
+                        break
+                    }
+                    else {
+                        self.favButton.setImage(UIImage(systemName: "heart"), for: UIControl.State.normal)
+                    }
+                } //for loop
+            } //else if
+        } //findObjectsInBackground
+    }
+    
+    @IBAction func onFavButton(_ sender: Any) {
+        //checks the button image, if its heart.fill isFav = true (favorited business)
+        if (favButton.currentImage?.isEqual(UIImage(systemName: "heart.fill")))! {
+            isFav = true
+        }
+        
+        //get current user
+        let user = PFUser.current()
+        let query = PFQuery(className: "Favorites")
+        query.whereKey("businessID", equalTo: choice["id"]!)
+        
+        //If already favorited, delete record on favButton press and change button image
+        //Else add new record to Parse and change button image
+        if isFav == true {
+            query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
+                if let error = error {
+                    //Log details of the failure
+                    print(error.localizedDescription)
+                }
+                else if let objects = objects {
+                    for object in objects {
+                        if (((object["user"] as AnyObject).objectId!!) == user!.objectId!) {
+                            //delete record
+                            object.deleteInBackground { (succeeded, error) in
+                                if(succeeded) {
+                                    print("deleted record from Parse")
+                                    self.favButton.setImage(UIImage(systemName: "heart"), for: UIControl.State.normal)
+                                }
+                                else {
+                                    print(error?.localizedDescription as Any)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        else {
+            //add to favorites
+            let newFavorite = PFObject(className: "Favorites")
+            newFavorite["businessID"] = self.choice["id"]!
+            newFavorite["user"] = PFUser.current()
+            newFavorite.saveInBackground { (success, error) in
+                if(success) {
+                    print("Record Saved Successfully")
+                    self.favButton.setImage(UIImage(systemName: "heart.fill"), for: UIControl.State.normal)
+                }
+                else {
+                    print(error?.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    
+    @IBAction func onLogout(_ sender: Any) {
+        PFUser.logOut()
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+        
+        let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+        sceneDelegate.window?.rootViewController = loginViewController
+    }
+    
 }
