@@ -422,7 +422,7 @@
                                 <state key="normal" title="Logout"/>
                             </button>
                             <connections>
-                                <action selector="onLogout:" destination="3mU-Ha-99B" id="ywP-Ue-Tb0"/>
+                                <action selector="onLogout:" destination="3mU-Ha-99B" id="XRA-jk-o0L"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -596,13 +596,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.2047929168" green="0.48154503110000002" blue="0.486428678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.2004078329" green="0.49271166319999998" blue="0.49423056840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Op1-PA-SXa">
-                                    <rect key="frame" x="0.0" y="186" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="-1" reuseIdentifier="ListTableViewCell" rowHeight="130" id="iA1-g3-2Yp" customClass="ListTableViewCell" customModule="TravelApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="130"/>
@@ -679,7 +672,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="nothing" destination="Op1-PA-SXa" id="nOZ-ZU-3jF"/>
                         <outlet property="tableView" destination="uGl-8z-PEw" id="hLN-fR-7od"/>
                     </connections>
                 </viewController>
@@ -707,10 +699,12 @@
             </objects>
             <point key="canvasLocation" x="43" y="151"/>
         </scene>
-        <!--Categories-->
+        <!--HomeViewController -->
         <scene sceneID="dBK-a0-39k">
             <objects>
                 <viewController id="B1Q-k7-4Hf" customClass="HomeViewController" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <string key="title">HomeViewController
+</string>
                     <view key="view" contentMode="scaleToFill" id="9e7-be-cm6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -787,7 +781,7 @@
                             </button>
                             <color key="tintColor" red="0.56102645399999995" green="0.21455296870000001" blue="0.15322691199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="onLogout:" destination="B1Q-k7-4Hf" id="FkK-VX-lg1"/>
+                                <action selector="onLogout:" destination="B1Q-k7-4Hf" id="a9D-kP-Fc5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

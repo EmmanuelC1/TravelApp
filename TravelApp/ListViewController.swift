@@ -27,7 +27,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     var lat = 0.0
     var long = 0.0
     // Label if nothing is added
-    @IBOutlet weak var nothing: UILabel!
+    //@IBOutlet weak var nothing: UILabel!
+    @IBOutlet weak var ratingImage: UIImageView!
+    @IBOutlet weak var priceImage: UIImageView!
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,11 +39,22 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
        let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell") as! ListTableViewCell
+       cell.isUserInteractionEnabled = true
         
        let choice = business[indexPath.row]
        let choice2 = business[indexPath.row]
        // let rate = choice["rating"] as! String
        let name = choice["name"] as! String
+        
+       if name == "No search results found." {
+            cell.isUserInteractionEnabled = false
+            cell.listNameLabel.text = name
+            cell.priceLabel.isHidden = true
+            cell.restaurantImageView.isHidden = true
+            cell.ratingLabel.isHidden = true
+            return cell
+       }
+        
        let posterUrl = URL(string: ((choice["image_url"] as? String)!))
        let rate = choice2["rating"] as! Double
        let price = choice["price"] as! String
@@ -59,10 +72,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
        cell.priceLabel.text = price
        cell.listNameLabel.text = name
        cell.restaurantImageView.af_setImage(withURL: posterUrl!)
-        
-        
       
-        
        return cell
     }
     
@@ -74,7 +84,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         
         // Works but not a consistent display
-        self.nothing.text = "  Loading..."
+        //self.nothing.text = "  Loading..."
         
         // LocationManager
         locationManager.requestWhenInUseAuthorization()
@@ -119,19 +129,19 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.business = businesses.toJSON()
                 //print(self.business)
                 self.tableView.reloadData()
-                self.nothing.text = ""
+                //self.nothing.text = ""
             }
             // If no results found, set default message
             else {
-                //self.business = [["name": "No search results found."]]
-                //self.tableView.reloadData()
+                self.business = [["name": "No search results found."]]
+                self.tableView.reloadData()
                 //print("Running")
                 // Having a difficult time displaying Loading then no search results found. Displays No search results found immediately.
                 // Works but not always consistent now in order
                 
-                if self.business.count == 0 && self.nothing.text == "  Loading..." {
-                    self.nothing.text = "  No search results found."
-                }
+//                if self.business.count == 0 && self.nothing.text == "  Loading..." {
+//                    self.nothing.text = "  No search results found."
+//                }
             }
         }
         // Coordinate checks
