@@ -46,6 +46,10 @@ Here's a walkthrough of implemented user stories:
 
 <img src='http://g.recordit.co/fpHhqkOWxx.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+Businesses by local area, Favorites saving, logout feature
+
+<img src='http://g.recordit.co/oZlk2QrI2v.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 
 ### 2. Screen Archetypes
 
