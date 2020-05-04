@@ -46,9 +46,13 @@ Here's a walkthrough of implemented user stories:
 
 <img src='http://g.recordit.co/fpHhqkOWxx.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-Businesses by local area, Favorites saving, logout feature
+Businesses by local area, Favorites saving, Logout feature:
 
 <img src='http://g.recordit.co/oZlk2QrI2v.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+Search and view business details through MapKit.
+
+<img src='http://g.recordit.co/RtL8udizW1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 ### 2. Screen Archetypes
