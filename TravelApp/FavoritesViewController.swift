@@ -72,8 +72,11 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         else {
             //iterate through businessIDs and call API to get dictionary for that business
+            var sleepCounter = 0
             for id in businessIDs {
-                usleep(250000) //will sleep for .002 seconds
+                if(sleepCounter % 5 == 0) {
+                    usleep(250000) //will sleep for .25 seconds (API does not allow us to make more than 5 consecutive calls)
+                }
                 CDYelpFusionKitManager.shared.apiClient.fetchBusiness(forId: id, locale: nil) { (response) in
                     if let response = response {
                         // append business to favoritedBusiness
@@ -85,6 +88,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
                         self.favoritedBusiness = [["name": "No search results found."]]
                         self.tableView.reloadData()
                     }
+                    sleepCounter += 1
                 }
             }
         }
