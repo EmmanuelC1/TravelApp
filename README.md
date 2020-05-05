@@ -85,13 +85,18 @@ Search and view business details through MapKit.
    * Home tab
    * Map Search tab
    * Favorite tab
+   * Booking tab
 * Home page w/ categories
    * List matching corresponding category
    * Click cell to view More Details page
 * Category details page
-   * Allows for booking/reserving the place/activity
+   * Allows for booking the place/event
+   * Allows for favoriting places
 * Map Search tab
    * Map and search for places
+   * Pins clickable and seque to Details View
+* Details page
+   * List more information on local business: Hours of operation, Address, Contact Information
 
 ## Wireframes
 Add picture of your hand sketched wireframes in this section
