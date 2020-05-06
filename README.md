@@ -50,9 +50,13 @@ Businesses by local area, Favorites saving, Logout feature:
 
 <img src='http://g.recordit.co/oZlk2QrI2v.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-Search and view business details through MapKit.
+Search and view business details through MapKit:
 
 <img src='http://g.recordit.co/RtL8udizW1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+Updated design:
+
+<img src='http://g.recordit.co/v8I3W0cAFv.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 ### 2. Screen Archetypes
