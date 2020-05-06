@@ -10,7 +10,9 @@ import UIKit
 
 class MybookingCellTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var userName: UILabel!
+    
+    @IBOutlet weak var restaurantName: UILabel!
+    @IBOutlet weak var username: UILabel!
     @IBOutlet weak var bookingDateLabel: UILabel!
     @IBOutlet weak var photoView: UIImageView!
     
@@ -19,6 +21,7 @@ class MybookingCellTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
