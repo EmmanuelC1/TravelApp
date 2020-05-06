@@ -5,15 +5,13 @@
 //  Created by Howard Aguilar on 4/12/20.
 //  Copyright © 2020 Emmanuel Castillo. All rights reserved.
 //
+
 import UIKit
 import AlamofireImage
 import Parse
 
-
 class BookingViewController: UIViewController, UINavigationBarDelegate, UIImagePickerControllerDelegate{
     
-   
-    @IBOutlet weak var MybookingBtn: UIButton!
     @IBOutlet weak var businessName: UILabel!
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var restaurantView: UIImageView!
@@ -30,6 +28,9 @@ class BookingViewController: UIViewController, UINavigationBarDelegate, UIImageP
     override func viewDidLoad() {
         super.viewDidLoad()
         
+     
+
+      
         businessName.text = choice["name"] as? String
         businessName.sizeToFit()
         
@@ -39,33 +40,16 @@ class BookingViewController: UIViewController, UINavigationBarDelegate, UIImageP
         
         let posterUrl = URL(string: ((choice["image_url"] as? String)!))
                restaurantView.af_setImage(withURL: posterUrl!)
-        
-        // alert connection
-            
+    
     }
-    //alert func
-    @objc func showAlert(){
-        let alertView = UIAlertController(title:"Thankyou!", message: "Your booking was successful.", preferredStyle: .alert)
-        alertView.addAction(UIAlertAction(title: "Done", style: .default, handler: { (_) in
-            print( "done")
-
-        }))
-        // present alert view
-        self.present(alertView, animated: true, completion: nil)
-
-        }
-    
-    
-    
-
     
      // done btn for Parse data
-    @IBAction func confirmButton(_ sender: Any) { // set up schema /
+    @IBAction func confrimButton(_ sender: Any) { // set up schema
         
         let booking = PFObject(className: "ConfirmBookings") // name of table
         
         booking["dateTime"] = inputTextField.text!
-        booking["restaurantName"] = businessName.text!
+        
         booking["username"] = PFUser.current()!
         
         
@@ -73,24 +57,16 @@ class BookingViewController: UIViewController, UINavigationBarDelegate, UIImageP
         let file = PFFileObject(name: "image.png", data:imageData!)
         
         booking["image"] = file
-       
         
         booking.saveInBackground{(success, error) in
-           
+            
             if success {
                 self.dismiss(animated: true, completion: nil)
-                
-                print("saved Booking!")
-              
-                
+                print("saved!")
             }else{
                     print("error!")
                  }
             }
-        
-      
-        
-        
          }
     
     

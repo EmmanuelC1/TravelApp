@@ -9,7 +9,7 @@ target 'TravelApp' do
   pod "CDYelpFusionKit"
   pod "Parse"
   pod "AlamofireImage"
-  
+
   target 'TravelAppTests' do
     inherit! :search_paths
     # Pods for testing
