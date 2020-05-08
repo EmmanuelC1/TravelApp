@@ -56,10 +56,6 @@ class DetailsViewController: UIViewController {
         
         // Obtain unique business ID
         let unique = choice["id"] as? String
-        
-        
-        // EXTRA CODE HERE TO SEARCH BY BUSINESS ID, replace previous dictionary pass in
-
         // Do any additional setup after loading the view.
         businessName.text = choice["name"] as? String
         businessName.sizeToFit()

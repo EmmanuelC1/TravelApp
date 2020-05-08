@@ -154,12 +154,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         
-        //Find the selected movie
+        //Find the selected cell
         let cell = sender as! UITableViewCell
         let indexPath = tableView.indexPath(for: cell)!
         let choice = business[indexPath.row]
         
-        //Pass the selected movie to the details view controller
+        //Pass the selected cell to the details view controller
         let detailsViewController = segue.destination as! DetailsViewController
         detailsViewController.choice = choice
         

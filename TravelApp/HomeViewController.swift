@@ -14,22 +14,16 @@ import MapKit
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    
+    // Variable that holds our categories
     let choices = ["Restaurants", "Theaters", "Museums", "Gas", "Clothes", "Shopping"]
     var counter = 0
-    
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return choices.count
     }
   
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-       
        return 100
-        
-        
     }
     
     
@@ -40,13 +34,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.categories1NameLabel.text = choices[counter]
         counter += 1
         
-        
         cell.layer.cornerRadius = cell.frame.height / 2.0
         cell.layer.borderWidth = 1
         
-      
-        
-    
         return cell
     }
 
@@ -76,12 +66,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         
-        //Find the selected movie
+        //Find the selected cell
         let cell = sender as! UITableViewCell
         let indexPath = tableView.indexPath(for: cell)!
         let word = choices[indexPath.row]
         
-        //Pass the selected movie to the details view controller
+        //Pass the selected cell to the details view controller
         let ListViewController = segue.destination as! ListViewController
         ListViewController.word = word
         
