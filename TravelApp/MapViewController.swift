@@ -69,6 +69,7 @@ class MapViewController: ViewController, CLLocationManagerDelegate, MKMapViewDel
            //print("locations = \(locValue.latitude) \(locValue.longitude)")
             lat  = locValue.latitude
             long = locValue.longitude
+            //locationManager.stopUpdatingLocation()
            animateMap(userLocation)
             //print("locations = \(locValue.latitude) \(locValue.longitude)")
        }
@@ -84,7 +85,7 @@ class MapViewController: ViewController, CLLocationManagerDelegate, MKMapViewDel
         let userSearch = searchInput.text as! String
         
         CDYelpFusionKitManager.shared.apiClient.cancelAllPendingAPIRequests()
-        print(userSearch)
+        //print(userSearch)
         CDYelpFusionKitManager.shared.apiClient.searchBusinesses(byTerm: userSearch, location: nil, latitude: lat, longitude: long, radius: 10000, categories: nil, locale: .english_unitedStates, limit: 10, offset: 0, sortBy: .rating, priceTiers: [.oneDollarSign, .twoDollarSigns], openNow: nil, openAt: nil, attributes: nil) { (response) in
             
             if let response = response,
@@ -94,8 +95,8 @@ class MapViewController: ViewController, CLLocationManagerDelegate, MKMapViewDel
                 //print(businesses.toJSON())
                     
                 self.businesses = businesses.toJSON()
-                print(userSearch + " in if statement")
-                print(self.businesses)
+                //print(userSearch + " in if statement")
+                //print(self.businesses)
                 self.createMarker(businesses: self.businesses)
             }
             else {

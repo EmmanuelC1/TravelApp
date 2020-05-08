@@ -15,7 +15,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var tableView: UITableView!
     // Variable that holds our categories
-    let choices = ["Restaurants", "Theaters", "Museums", "Gas", "Clothes", "Shopping"]
+    let choices = ["Restaurants", "Fast Food", "Theaters", "Museums", "Laundry", "Clothing", "Shopping", "Gasoline"]
     var counter = 0
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
