@@ -40,6 +40,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
        let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell") as! ListTableViewCell
        cell.isUserInteractionEnabled = true
+       cell.priceLabel.isHidden = false
+       cell.restaurantImageView.isHidden = false
+       cell.ratingLabel.isHidden = false
         
        let choice = business[indexPath.row]
        let choice2 = business[indexPath.row]

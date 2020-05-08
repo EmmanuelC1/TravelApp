@@ -47,12 +47,13 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
             }
             else if let objects = objects {
                 // found objects
-                print("Successfully retrieved \(objects.count) favorited businesses.")
+                //print("Successfully retrieved \(objects.count) favorited businesses.")
                 
                 //Append BussinessId of each object to businessIDs from Parse
                 for object in objects {
                     //print(object.objectId!)
                     self.businessIDs.append(object["businessID"] as! String)
+                    //print(self.businessIDs)
                 }
             }
             // call getBusinessDictionary Function
@@ -65,6 +66,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     // the business dictionary using the businessID
     // stored in Parse. Then reloads tableView data
     func getBusinessDictionary(businessIDs:[String]) {
+        CDYelpFusionKitManager.shared.apiClient.cancelAllPendingAPIRequests()
         //if there are no favorites
         if businessIDs.count == 0 {
             favoritedBusiness.append(["name": "You do not have any favorites"])
@@ -74,13 +76,17 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
             //iterate through businessIDs and call API to get dictionary for that business
             var sleepCounter = 0
             for id in businessIDs {
-                if(sleepCounter % 5 == 0) {
-                    usleep(250000) //will sleep for .25 seconds (API does not allow us to make more than 5 consecutive calls)
+                if(sleepCounter % 5 == 0 && sleepCounter != 0) {
+                    //print(sleepCounter)
+                    //print("SLEEPING")
+                    usleep(1000000) //will sleep for .25 seconds (API does not allow us to make more than 5 consecutive calls)
                 }
+                //print (id)
                 CDYelpFusionKitManager.shared.apiClient.fetchBusiness(forId: id, locale: nil) { (response) in
                     if let response = response {
                         // append business to favoritedBusiness
                         self.favoritedBusiness.append(response.toJSON())
+                        //print(response.toJSON())
                         self.tableView.reloadData()
                     }
                     // If no results found, set default message
@@ -88,8 +94,9 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
                         self.favoritedBusiness = [["name": "No search results found."]]
                         self.tableView.reloadData()
                     }
-                    sleepCounter += 1
+                    //sleepCounter += 1
                 }
+                sleepCounter += 1
             }
         }
     }
@@ -105,7 +112,6 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         sceneDelegate.window?.rootViewController = loginViewController
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return favoritedBusiness.count
     }
@@ -113,16 +119,52 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoritesCell") as! FavoritesCell
         cell.isUserInteractionEnabled = true
+        cell.priceLabel.isHidden = false
+        cell.restaurantImageView.isHidden = false
+        cell.ratingLabel.isHidden = false
         
         let choice = favoritedBusiness[indexPath.row]
-        let name = choice["name"] as! String
-        cell.businessLabel.text = name
         
-        //if there are no favorites, cell cannot be clicked on (no Segue to Details)
-        if name == "You do not have any favorites" {
-            cell.isUserInteractionEnabled = false;
+        if choice["name"] as? String == "You do not have any favorites" {
+            cell.isUserInteractionEnabled = false
+            cell.businessLabel.text = choice["name"] as? String
+            cell.priceLabel.isHidden = true
+            cell.restaurantImageView.isHidden = true
+            cell.ratingLabel.isHidden = true
+            
+            return cell
+        } else if choice["name"] == nil {
+            cell.isUserInteractionEnabled = false
+            cell.businessLabel.text = "Load Error"
+            cell.priceLabel.isHidden = true
+            cell.restaurantImageView.isHidden = true
+            cell.ratingLabel.isHidden = true
+            
+            return cell
+        }else {
+        
+            //cell
+            cell.layer.cornerRadius = cell.frame.height / 2.5
+            cell.layer.borderColor = UIColor.red.cgColor
+            
+            cell.restaurantImageView.layer.cornerRadius = cell.frame.height / 2.5
+            cell.restaurantImageView.layer.borderWidth = 4
+            cell.restaurantImageView.layer.borderColor = UIColor.white.cgColor
+            
+            cell.businessLabel.text = choice["name"] as? String
+            let posterUrl = URL(string: ((choice["image_url"] as? String)!))
+            let rate = choice["rating"] as! Double
+            cell.ratingLabel.text = String(rate)
+            cell.priceLabel.text = choice["price"] as? String
+            cell.restaurantImageView.af_setImage(withURL: posterUrl!)
+            
+            
+            //if there are no favorites, cell cannot be clicked on (no Segue to Details)
+            if choice["name"] as? String == "You do not have any favorites" {
+                cell.isUserInteractionEnabled = false;
+            }
+        
         }
-        
         return cell
         
     }
