@@ -78,8 +78,9 @@ class DetailsViewController: UIViewController {
         // Remove optional characters
         help.removeLast()
         help.remove(at: help.startIndex)
+        let replaced = help.replacingOccurrences(of: "\"", with: "") // "Replace parenthesis with nothing"
         // Assign proper address to label
-        businessAddress.text = help
+        businessAddress.text = replaced
         //businessAddress.text = addy["display_address"] as? String // This does not work, displays nothing
         businessAddress.sizeToFit()
         
