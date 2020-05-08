@@ -19,6 +19,8 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var businessAddress: UILabel!
     @IBOutlet weak var businessPhone: UILabel!
     @IBOutlet weak var businessAvailability: UILabel!
+    // Help get rid of optional for string
+    var help:String!
     //Need to configure extra label & Book Button
     @IBOutlet weak var bookButton: UIButton!
     @IBOutlet weak var favButton: UIButton!
@@ -76,7 +78,12 @@ class DetailsViewController: UIViewController {
         addy = choice["location"] as? [String:Any]
         //print (addy["display_address"]!)
         // This displays the address, but with [] around and likely un-safe
-        businessAddress.text = "\(String(describing: addy["display_address"]!))"
+        help = "\(String(describing: addy["display_address"]!))"
+        // Remove optional characters
+        help.removeLast()
+        help.remove(at: help.startIndex)
+        // Assign proper address to label
+        businessAddress.text = help
         //businessAddress.text = addy["display_address"] as? String // This does not work, displays nothing
         businessAddress.sizeToFit()
         
