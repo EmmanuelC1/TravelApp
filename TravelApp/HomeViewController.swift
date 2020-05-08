@@ -31,7 +31,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as! HomeTableViewCell
         
-        cell.categories1NameLabel.text = choices[counter]
+        cell.categories1NameLabel.text = choices[indexPath.row]
         counter += 1
         
         cell.layer.cornerRadius = cell.frame.height / 2.0
