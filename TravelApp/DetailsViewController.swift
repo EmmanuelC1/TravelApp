@@ -239,7 +239,7 @@ class DetailsViewController: UIViewController {
                             //delete record
                             object.deleteInBackground { (succeeded, error) in
                                 if(succeeded) {
-                                    print("deleted record from Parse")
+                                    //print("deleted record from Parse")
                                     self.favButton.setImage(UIImage(systemName: "heart"), for: UIControl.State.normal)
                                 }
                                 else {
@@ -258,7 +258,7 @@ class DetailsViewController: UIViewController {
             newFavorite["user"] = PFUser.current()
             newFavorite.saveInBackground { (success, error) in
                 if(success) {
-                    print("Record Saved Successfully")
+                    //print("Record Saved Successfully")
                     self.favButton.setImage(UIImage(systemName: "heart.fill"), for: UIControl.State.normal)
                 }
                 else {
