@@ -34,8 +34,10 @@ Create an app for tourists who want to know about local food, movies, and physic
 - [x] Home Screen with 3 tab buttons
 - [x] Query DB for images to populate tabs
 - [x] User must be able to select an item and see details (book button)
-- [x] Give user ability to book event (mock-up)
-- [x] Give user ability to cancel a booked event (mock-up)
+- [x] Give user ability to book event 
+- [x] Give user ability to cancel a booked event
+
+
 
 **Optional Nice-to-have Stories**
 
@@ -84,6 +86,7 @@ Booking features:
 * Map Search Tab
 * User favorite Tab
 * User Bookings Tab
+
 **Flow Navigation** (Screen to Screen)
 
 * Login page
@@ -105,10 +108,10 @@ Booking features:
 * Details page
    * List more information on local business: Hours of operation, Address, Contact Information
 * Booking page
-    * Allows user to enter time, date and locaton of booking 
-    My Booking page: 
-      * List of save confirmed booking by user. 
-      * Allows user to Cancel booking with Alert pop for confirmation and refresh feature for instant update.
+   * Allows user to enter time, date and locaton of booking 
+ * My Bookings page: 
+   * List of save confirmed booking by user. 
+   * Allows user to Cancel booking with Alert pop for confirmation and refresh feature for instant update.
 ## Wireframes
 Add picture of your hand sketched wireframes in this section
 <img src="https://i.imgur.com/eyTqj2Z.jpg" width=600>
