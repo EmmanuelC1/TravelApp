@@ -34,8 +34,8 @@ Create an app for tourists who want to know about local food, movies, and physic
 - [x] Home Screen with 3 tab buttons
 - [x] Query DB for images to populate tabs
 - [x] User must be able to select an item and see details (book button)
-- [x] Give user ability to book event 
-- [x] Give user ability to cancel a booked event
+- [x] Give user ability to book event (mock up)
+- [x] Give user ability to cancel a booked event(mock up)
 
 
 
