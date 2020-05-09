@@ -831,7 +831,8 @@
                         <viewLayoutGuide key="safeArea" id="ZED-W2-yMJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="tDs-3i-faa">
-                        <barButtonItem key="rightBarButtonItem" title="logout" id="ZZ3-wQ-fek">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="ZZ3-wQ-fek">
+                            <color key="tintColor" red="0.60046676275025912" green="0.2274434608517121" blue="0.16185123878432026" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="LogoutMybooking:" destination="2p1-fW-U0e" id="Ca2-L1-RVS"/>
                             </connections>
@@ -1187,6 +1188,6 @@
         <image name="place" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Dnf-lh-Iwk"/>
+        <segue reference="G3b-jp-YWv"/>
     </inferredMetricsTieBreakers>
 </document>
