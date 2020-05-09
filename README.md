@@ -58,6 +58,8 @@ Updated design:
 
 <img src='http://g.recordit.co/v8I3W0cAFv.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+Booking features: 
+<img src='https://recordit.co/8R80aqrlOD.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ### 2. Screen Archetypes
 
@@ -72,7 +74,7 @@ Updated design:
   * Display information about the place/event, booking button
 * Search tab -> Maps page
   * Search for specific place/activity -> give details and allow to reserve/book event
-
+* Booking tab ->  list of users booking and details ie: Place, time and date 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
@@ -80,7 +82,7 @@ Updated design:
 * Home Tab
 * Map Search Tab
 * User favorite Tab
-
+* User Bookings Tab
 **Flow Navigation** (Screen to Screen)
 
 * Login page
@@ -101,7 +103,11 @@ Updated design:
    * Pins clickable and seque to Details View
 * Details page
    * List more information on local business: Hours of operation, Address, Contact Information
-
+* Booking page
+    * Allows user to enter time, date and locaton of booking 
+    My Booking page: 
+      * List of save confirmed booking by user. 
+      * Allows user to Cancel booking with Alert pop for confirmation and refresh feature for instant update.
 ## Wireframes
 Add picture of your hand sketched wireframes in this section
 <img src="https://i.imgur.com/eyTqj2Z.jpg" width=600>
@@ -155,6 +161,11 @@ Add picture of your hand sketched wireframes in this section
    * (GET) Gets search information from API
 * Detail Screen
    * (GET) retrieves detailed information depending on place/event
-
+* Booking Screen
+   * (GET) user booking details of time date  
+   * (GET) user locaton of booking API
+  Mybooking
+    * (GET) Retrieves user booking - parse
+    * (GET) Removes User booking - parse 
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
