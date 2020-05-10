@@ -14,7 +14,7 @@ Group Project - README Template
 ### Description
 Create an app for tourists who want to know about local food, movies, and physical events in relation to their current location.
 
-## Video walkthrough with narration, please click on image to view youtube video:
+## Video walkthrough with narration, please click on image to view video:
 
 [![Alt text](https://i.imgur.com/iWlumDI.png)](https://youtu.be/HRIc8rnNKkY)
 
