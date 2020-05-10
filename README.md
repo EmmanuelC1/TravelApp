@@ -65,9 +65,9 @@ Booking features:
 
 <img src='https://recordit.co/8R80aqrlOD.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-Video walkthrough with narration:
+Video walkthrough with narration, please click on image to view youtube video:
 
-[![Click to view video](https://i.imgur.com/iWlumDI.png)](https://youtu.be/HRIc8rnNKkY)
+[![Alt text](https://i.imgur.com/iWlumDI.png)](https://youtu.be/HRIc8rnNKkY)
 
 ### 2. Screen Archetypes
 
