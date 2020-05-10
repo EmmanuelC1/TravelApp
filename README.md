@@ -15,10 +15,10 @@ Create an app for tourists who want to know about local food, movies, and physic
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
-- **Category:**
+- **Category:** Travel
 - **Mobile:**
 - **Story:**
-- **Market:**
+- **Market:** Tourism
 - **Habit:**
 - **Scope:**
 
