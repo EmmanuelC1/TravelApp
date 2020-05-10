@@ -62,6 +62,7 @@ Updated design:
 <img src='http://g.recordit.co/v8I3W0cAFv.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 Booking features: 
+
 <img src='https://recordit.co/8R80aqrlOD.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ### 2. Screen Archetypes
