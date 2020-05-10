@@ -67,7 +67,7 @@ Booking features:
 
 Video walkthrough with narration:
 
-[![Click to view video](https://img.youtube.com/vi/VID/0.jpg)](https://youtu.be/HRIc8rnNKkY)
+[![Click to view video](https://i.imgur.com/iWlumDI.png)](https://youtu.be/HRIc8rnNKkY)
 
 ### 2. Screen Archetypes
 
